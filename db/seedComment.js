@@ -22,7 +22,7 @@ Comment.deleteMany({}, (error, deletedComments) => {
         video: "610070c258165b5bf9fdd908",
       },
     ],
-     (error, createdComments) => {
+      (error, createdComments) => {
       if (error) {
         return console.log(error);
       }
