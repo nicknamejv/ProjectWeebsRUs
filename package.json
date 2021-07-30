@@ -1,0 +1,29 @@
+{
+  "name": "weebsrus",
+  "version": "1.0.0",
+  "description": "This is our application for a reverse engineered site.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicknamejv/WeebsRUs.git"
+  },
+  "author": "nicknamejv & TLew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicknamejv/WeebsRUs/issues"
+  },
+  "homepage": "https://github.com/nicknamejv/WeebsRUs#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "connect-mongo": "^4.4.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.13.5"
+  }
+}
