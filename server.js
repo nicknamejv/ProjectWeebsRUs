@@ -1,13 +1,28 @@
-//NOTE External Modules
+// NOTE: External Modules
 const express = require('express');
 const app = express();
 const PORT = 4000;
 
-//NOTE Routes
+// NOTE: App Config
+app.set('view engine', 'ejs');
+
+// NOTE: INDEX Route
 app.get('/index', (req, res) => {
-    res.send('home route');
+    return res.render('videos/index');
 });
 
+// NOTE: CREATE Route
+app.post('/new', (req, res) => {
+    res.send('This is a CREATE route!');
+});
+
+// NOTE: SHOW Route 
+
+// NOTE: EDIT Route
+
+// NOTE: UPDATE Route
+
+// NOTE: DESTROY Route
 
 
 app.listen(PORT, () => {

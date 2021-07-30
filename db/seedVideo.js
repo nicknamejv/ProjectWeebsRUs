@@ -31,7 +31,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         isRecommended: false,
       },
     ],
-     (error, createdVideo) => {
+      (error, createdVideo) => {
       if (error) {
         return console.log(error);
       }
