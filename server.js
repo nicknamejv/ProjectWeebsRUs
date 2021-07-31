@@ -17,6 +17,9 @@ app.post('/new', (req, res) => {
 });
 
 // NOTE: SHOW Route 
+app.get('/video/:id', (req, res) => {
+    res.send('This is the SHOW page');
+});
 
 // NOTE: EDIT Route
 
