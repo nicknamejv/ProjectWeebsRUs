@@ -22,10 +22,20 @@ app.get('/video/:id', (req, res) => {
 });
 
 // NOTE: EDIT Route
+app.get('/video/id/edit', (req, res) => {
+    res.send('This is the EDIT page');
+});
 
 // NOTE: UPDATE Route
+app.put('/video/id', (req, res, next) => {
+    res.send('This is the UPDATE page');
+    next();
+});
 
 // NOTE: DESTROY Route
+app.delete('/video/id', (req, res) => {
+    res.send('This is the DESTROY page');
+});
 
 
 app.listen(PORT, () => {
