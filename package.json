@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch-sass": "sass --watch sass/src:public/styles",
+    "watch-nodemon": "nodemon server.js",
+    "dev": "open http://localhost:4000/index && concurrently -n sass,server -c 'bgGreen.bold,bgBlue.bold' 'npm:watch-sass' 'npm:watch-nodemon'"
   },
   "repository": {
     "type": "git",
