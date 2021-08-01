@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 // NOTE: INDEX Route
-app.get('/index', (req, res) => {
+app.get('/video', (req, res) => {
     Video.find({}, (error, allVideo) => {
         const context = {
             videos: allVideo,
@@ -38,7 +38,19 @@ app.post('/new', (req, res) => {
 
 // NOTE: SHOW Route 
 app.get('/video/:id', (req, res) => {
-    res.send('This is the SHOW page');
+    Video.findById(req.params.id, (error, foundVideo) => {
+        if (error) {
+            console.log(error);
+            req.error = error;
+            return next();
+        };
+
+        const context = {
+            videos: foundVideo,
+        };
+
+        return res.render('videos/show', context);
+    });
 });
 
 // NOTE: EDIT Route
