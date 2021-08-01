@@ -1,10 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weebs R Us</title>
-</head>
+
+    <!-- Head Partial -->
+    <%- include('../partials/head/_head') %> 
+
 <body>
 
     <h1 class='title'>
@@ -19,26 +18,29 @@
                     <%= allVideo.title %>
                 </li>
                 <li>
-                    <b>Image:</b> <%= allVideo.videoImage %>
-                </li>
+                    <img 
+                    src="<%= allVideo.videoImage %>"
+                    alt="video image" width="420" height="315"/>
                 <li>
                     <b>Description:</b> <%= allVideo.description %>
                 </li>
                 <li>
                     <b>Genre:</b> <%= allVideo.genre %>
                 </li>
-                <li>
+                <!-- <li>
                     <iframe width="420" height="315"
                     src="<%= allVideo.videoLink %>">
                     </iframe>
-                </li>
+                </li> -->
                 <li>
                     <b>Recommended?</b> <%= allVideo.isRecommended %>
+                </li>
+                <li>
+                    <a href="/index/<%= allVideo.id %>">VIDEO ID</a>
                 </li>
             </ul>
         <% }); %> 
     </p>
-
 
 </body>
 </html>
