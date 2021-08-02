@@ -20,38 +20,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(methodOverride("_method"));
 
-// NOTE: INDEX Route
-// app.get('/video', (req, res) => {
-//     Video.find({}, (error, allVideo) => {
-//         const context = {
-//             videos: allVideo,
-//         };
-
-//         return res.render('videos/index', context);
-//     });
-// });
-
 // NOTE: CREATE Route
 app.post('/new', (req, res) => {
     res.send('This is a CREATE route!');
 });
-
-// NOTE: SHOW Route 
-// app.get('/video/:id', (req, res) => {
-//     Video.findById(req.params.id, (error, foundVideo) => {
-//         if (error) {
-//             console.log(error);
-//             req.error = error;
-//             return next();
-//         };
-
-//         const context = {
-//             videos: foundVideo,
-//         };
-
-//         return res.render('videos/show', context);
-//     });
-// });
 
 // NOTE: EDIT Route
 app.get('/video/:id/edit', (req, res) => {
@@ -68,6 +40,9 @@ app.put('/video/:id', (req, res, next) => {
 app.delete('/video/:id', (req, res) => {
     res.send('This is the DESTROY page');
 });
+
+
+
 
 
 
