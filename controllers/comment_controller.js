@@ -10,21 +10,12 @@ router.get('/', (req, res) => {
             req.error = error;
             return next();
         };
-
-        Video.find({}, (error, allVideo) => {
-            if (error) {
-                console.log(error);
-                req.error = error;
-                return next();
-            };
-
-            const context = {
-                comments: allComment,
-                videos: allVideo,
-            };
-
-            return res.render('comments/index', context);
-        });
+        
+        const context = {
+            comments: allComment,
+        };
+        
+        return res.render('comments/index', context);
     });
 });
 
