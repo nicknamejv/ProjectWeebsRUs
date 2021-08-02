@@ -21,15 +21,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
 // NOTE: INDEX Route
-app.get('/video', (req, res) => {
-    Video.find({}, (error, allVideo) => {
-        const context = {
-            videos: allVideo,
-        };
+// app.get('/video', (req, res) => {
+//     Video.find({}, (error, allVideo) => {
+//         const context = {
+//             videos: allVideo,
+//         };
 
-        return res.render('videos/index', context);
-    });
-});
+//         return res.render('videos/index', context);
+//     });
+// });
 
 // NOTE: CREATE Route
 app.post('/new', (req, res) => {
@@ -37,21 +37,21 @@ app.post('/new', (req, res) => {
 });
 
 // NOTE: SHOW Route 
-app.get('/video/:id', (req, res) => {
-    Video.findById(req.params.id, (error, foundVideo) => {
-        if (error) {
-            console.log(error);
-            req.error = error;
-            return next();
-        };
+// app.get('/video/:id', (req, res) => {
+//     Video.findById(req.params.id, (error, foundVideo) => {
+//         if (error) {
+//             console.log(error);
+//             req.error = error;
+//             return next();
+//         };
 
-        const context = {
-            videos: foundVideo,
-        };
+//         const context = {
+//             videos: foundVideo,
+//         };
 
-        return res.render('videos/show', context);
-    });
-});
+//         return res.render('videos/show', context);
+//     });
+// });
 
 // NOTE: EDIT Route
 app.get('/video/:id/edit', (req, res) => {
@@ -73,7 +73,9 @@ app.delete('/video/:id', (req, res) => {
 
 
 // SECTION: Controller Files 
-// app.use('/video', controllers.video);
+app.use('/video', controllers.video);
+
+app.use('/comment', controllers.comment);
 
 app.listen(PORT, () => {
     console.log(`I live on port ${PORT}`);
