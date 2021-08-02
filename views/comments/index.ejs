@@ -23,8 +23,17 @@
                     Content: <%= allComment.content %> 
                 </li>
                 <li>
-                    <a href="/video/<%=allComment.video._id%>">
+                    <a href="/video/<%= allComment.video._id %>  ">
                         <%= allComment.video.title %>
+                    </a>
+                </li>
+                <li>
+                    <a href="/video/<%= allComment.video._id %>  ">
+                        <img 
+                        src="<%= allComment.video.videoImage %>" alt="video_image"
+                        width="420"
+                        height="315"
+                        >
                     </a>
                 </li>
             </ul>
