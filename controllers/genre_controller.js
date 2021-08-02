@@ -3,9 +3,9 @@ const router = express.Router();
 
 const { Video }  = require('../models');
 
-// NOTE: INDEX Route
-router.get('/', (req, res) => {
-    Video.find({}, (error, allVideo) => {
+// NOTE: INDEX Route - SLICE OF LIFE
+router.get('/sliceoflife', (req, res) => {
+    Video.find({ genre: 'Slice of Life' }, (error, allVideo) => {
         const context = {
             videos: allVideo,
         };
@@ -14,17 +14,25 @@ router.get('/', (req, res) => {
     });
 });
 
-// NOTE: SHOW Route
-router.get('/:genre', (req, res, next) => {
-    Video.find({ genre: req.params.genre }, (error, foundVideo) => {
-        if (error) {
-            console.log(error);
-            req.error = error;
-            return next();
-        }
+// NOTE: INDEX Route - PSYCHOLOGICAL
+router.get('/psychological', (req, res) => {
+    Video.find({ genre: 'Psychological' }, (error, allVideo) => {
+        const context = {
+            videos: allVideo,
+        };
 
-            return res.render('genres/show', context);
-        
+        return res.render('genres/index', context);
+    });
+});
+
+// NOTE: INDEX Route - SLICE OF LIFE
+router.get('/journeytoanotherworld', (req, res) => {
+    Video.find({ genre: 'Journey to Another World' }, (error, allVideo) => {
+        const context = {
+            videos: allVideo,
+        };
+
+        return res.render('genres/index', context);
     });
 });
 
