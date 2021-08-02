@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Head Partial -->
+    <%- include('../partials/head/_head') %> 
+
+<body>
+    
+    <h1 class='title'>
+        Weebs R Us - Comment Index Page
+    </h1>
+
+    <a href="/video"><button>Video Index</button></a>
+
+    <p id="comment">
+        <% comments.forEach(allComment => { %>
+            <ul class="comment_list">
+                <li>
+                    Username: <%= allComment.username %> 
+                </li>
+                <li>
+                    Content: <%= allComment.content %> 
+                </li>
+                <li>
+                    <a href="/video/<%=allComment.video._id%>">
+                        <%= allComment.video.title %>
+                    </a>
+                </li>
+            </ul>
+        <% }) %>
+    </p>
+    
+</body>
+</html>
