@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { Video } = require('../models');
+const { Video, Comment } = require('../models');
 
 // NOTE: INDEX Route
 router.get('/', (req, res) => {
@@ -23,11 +23,20 @@ router.get('/:id', (req, res, next) => {
             return next();
         };
 
-        const context = {
-            videos: foundVideo,
-        };
+        Comment.find({ video: req.params.id }).populate('video').exec((error, allComment) => {
+            if (error) {
+                console.log(error);
+                req.error = error;
+                return next();
+            };
 
-        return res.render('videos/show', context);
+            const context = {
+                videos: foundVideo,
+                comments: allComment,
+            };
+
+            return res.render('videos/show', context);
+        });
     });
 });
 
