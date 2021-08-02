@@ -1,7 +1,7 @@
 // NOTE: External Modules
 const express = require('express');
 const app = express();
-const methodOverride = require("method-override");
+const methodOverride = require('method-override');
 const PORT = 4000;
 
 // NOTE: Models
@@ -14,11 +14,13 @@ const controllers = require('./controllers');
 app.set('view engine', 'ejs');
 
 // NOTE: Middleware 
-app.use(express.static("public"));
+app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(methodOverride("_method"));
+app.use(methodOverride('_method'));
+
+// app.use(require('./utils/genreLinks'));
 
 // NOTE: CREATE Route
 app.post('/new', (req, res) => {
@@ -51,6 +53,8 @@ app.delete('/video/:id', (req, res) => {
 app.use('/video', controllers.video);
 
 app.use('/comment', controllers.comment);
+
+app.use('/genre', controllers.genre);
 
 app.listen(PORT, () => {
     console.log(`I live on port ${PORT}`);
