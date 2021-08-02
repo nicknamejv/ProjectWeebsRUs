@@ -2,7 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: red;
+}
+
+body {
+  background-color: #1f1f1f;
+  color: antiquewhite;
+}
+body .title {
+  color: antiquewhite;
 }
 
 /*# sourceMappingURL=main.css.map */
