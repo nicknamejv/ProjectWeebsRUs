@@ -9,17 +9,17 @@ Comment.deleteMany({}, (error, deletedComments) => {
       {
         username: 'Weebtlewis',
         content: 'That was dope',
-        video: "61083fc45eeab42598ce04a3",
+        video: "61086a6dac843451953053ee",
       },
       {
         username: 'WeebJonV',
         content: 'I can dig it!',
-        video: "61083fc45eeab42598ce04a4",
+        video: "61086a6dac843451953053ef",
       },
       {
         username: 'WeebSquad',
         content: 'Its lit!',
-        video: "61083fc45eeab42598ce04a5",
+        video: "61086a6dac843451953053f0",
       },
     ],
       (error, createdComments) => {
