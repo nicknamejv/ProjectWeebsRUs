@@ -29,6 +29,7 @@ const videoSchema = new mongoose.Schema(
 
         isRecommended: {
             type: Boolean,
+            default: false,
         },
     },
 

@@ -12,7 +12,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         description: 'A psychological thriller about a teenager who got bored',
         genre: 'Psychological',
         videoLink: 'https://www.youtube.com/embed/V26rLTwuRqE',
-        isRecommended: true,
+        isRecommended: false,
       },
       {
         title: 'Overlord',
@@ -20,7 +20,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         description: 'Satoru gets stuck in a VRMMO and is the taking over',
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/T7l-JbtU7M0',
-        isRecommended: true,
+        isRecommended: false,
       },
       {
         title: 'Clannad',
