@@ -14,7 +14,7 @@
     <a href="/video"><button>Video Index</button></a>
     <a href="/comment"><button>Comment Index</button></a>
 
-    <p id="video">
+    <section id="video">
             <ul class="video_list">
                 <li>
                     <b>Title:</b>
@@ -45,7 +45,55 @@
                     <%= videos.isRecommended %>
                 </li>
             </ul>
-    </p>
+    </section>
+    <section class="comment_form">
+        <form action="/comment?redirect=video%2F<%= videos._id %> " method="POST">
+            <div>
+                <label for="username_comment">Username</label>
+                <input 
+                type="text" 
+                name="username" 
+                placeholder="Username"
+                >
+            </div>
+
+            <div>
+                <label for="comment_content">Content</label>
+                <input 
+                type="text" 
+                name="content" 
+                placeholder="Have a comment?"
+                >
+            </div>
+
+            <!-- Here is our hidden input to provide the product id -->
+            <input 
+            type="hidden"
+            name="video"
+            value="<%= videos._id %>"/>
+
+            <div>
+                <button>Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="comment">
+        <% comments.forEach(allComment => { %>
+            <ul class="comment_list">
+                <li>
+                    <b>Username:</b> <%= allComment.username %> 
+                </li>
+                <li>
+                    <b>Content:</b> <%= allComment.content %>
+                    <small>
+                    <%= new Date(allComment.createdAt).toLocaleString() %>
+                    </small> 
+                </li>
+            </ul>
+        <% }) %>
+    </section>
+    
     
 </body>
 </html>
