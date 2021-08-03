@@ -25,9 +25,9 @@ app.post('/new', (req, res) => {
 });
 
 // NOTE: EDIT Route
-app.get('/video/:id/edit', (req, res) => {
-    res.send('This is the EDIT page');
-});
+// app.get('/video/:id/edit', (req, res) => {
+//     res.send('This is the EDIT page');
+// });
 
 // NOTE: UPDATE Route
 // app.put('/video/:id', (req, res, next) => {
