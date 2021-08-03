@@ -6,12 +6,13 @@
 }
 
 body {
-  background-color: #1f1f1f;
-  color: antiquewhite;
+  background-color: #333533;
+  color: #E8EDDF;
   height: 1750px;
 }
 body .title {
-  color: antiquewhite;
+  color: #F5CB5C;
+  font-family: "Share Tech Mono", monospace, sans-serif;
 }
 body #video {
   display: grid;

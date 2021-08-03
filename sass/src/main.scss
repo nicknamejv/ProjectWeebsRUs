@@ -1,4 +1,4 @@
-// @use "../_variables" as *;
+@use "../_variables/" as *;
 
 * {
     margin: 0;
@@ -7,13 +7,20 @@
     border: 2px solid red;
 }
 
+// $primary-color: #242423; // Eerie Black
+// $alt-color: #333533; // Jet
+// $secondary-color: #F5CB5C; // Maize Crayola
+// $third-color: #E8EDDF; // Alabaster
+// $fourth-color: #CFDBD5; // Timberwolf
+
 body {
-    background-color: #1f1f1f;
-    color: antiquewhite;
+    background-color: $alt-color;
+    color: $third-color;
     height: 1750px;
 
     .title {
-        color: antiquewhite;
+        color: $secondary-color;
+        font-family: "Share Tech Mono", monospace, sans-serif;;
     }
 
     #video {
