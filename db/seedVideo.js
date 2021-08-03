@@ -68,7 +68,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         description: 'He thought he died, but then he came back to life as if at a checkpoint in a game',
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/Slz_rahWp6Y',
-        isRecommended: false,
+        isRecommended: true,
       },
       {
         title: 'The Rising of the Shield Hero',
@@ -76,7 +76,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         description: 'Traveling through a new world as the shield hero can be exhausting',
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/rKnyi3TRznA',
-        isRecommended: false,
+        isRecommended: true,
       },
       {
         title: 'That Time I Got Reincarnated as a Slime',

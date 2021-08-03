@@ -31,12 +31,34 @@ router.get('/:id', (req, res, next) => {
             };
 
             const context = {
-                videos: foundVideo,
+                video: foundVideo,
                 comments: allComment,
             };
 
             return res.render('videos/show', context);
         });
+    });
+});
+
+// NOTE: UPDATE Route
+router.put('/:id', (req, res, next) => {
+    Video.findByIdAndUpdate(
+        req.params.id, 
+        {
+            $set: req.body,
+        },
+        {
+            new: true,
+        },
+        
+        (error, updatedRecommend) => {
+            if (error) {
+                console.log(error);
+                req.error = error;
+                return next();
+            };
+
+        return res.redirect('/video');
     });
 });
 

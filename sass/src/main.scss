@@ -4,14 +4,51 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: 2px solid red;
 }
 
 body {
     background-color: #1f1f1f;
     color: antiquewhite;
+    height: 1750px;
 
     .title {
         color: antiquewhite;
+    }
+
+    #video {
+        display: grid;
+        grid-template-columns: 200px 200px 200px 200px 200px;
+        grid-template-rows: 400px 400px 400px;
+        row-gap: 100px;
+        column-gap: 50px;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    #popular_video {
+        contain: content;
+        overflow: scroll;
+        height: 500px;
+    }
+
+    #recommended_video {
+        contain: content;
+        overflow: scroll;
+        height: 500px;
+    }
+
+    #show_page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #show_video {
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
 }
 
