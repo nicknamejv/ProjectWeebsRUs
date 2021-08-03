@@ -33,17 +33,15 @@ app.get('/video/:id/edit', (req, res) => {
 });
 
 // NOTE: UPDATE Route
-app.put('/video/:id', (req, res, next) => {
-    res.send('This is the UPDATE page');
-    next();
-});
+// app.put('/video/:id', (req, res, next) => {
+//     res.send('This is the UPDATE page');
+//     next();
+// });
 
 // NOTE: DESTROY Route
 app.delete('/video/:id', (req, res) => {
     res.send('This is the DESTROY page');
 });
-
-
 
 
 

@@ -15,38 +15,67 @@
     <a href="/comment"><button>Comment Index</button></a>
     <a href="/genre"><button>Genre Index</button></a>
     
-    <section id="video">
-        <% videos.forEach(allVideo => { %>
-            <ul class="video_list">
-                <li>
-                    <b>Title:</b>
-                    <%= allVideo.title %>
-                </li>
-                <li>
-                    <a href="/video/<%= allVideo.id %>">
-                        <img 
-                        src="<%= allVideo.videoImage %>"
-                        alt="video image"
-                        width="200"
-                        height="100"/>
-                    </a>
-                <li>
-                    <b>Description:</b> <%= allVideo.description %>
-                </li>
-                <li>
-                    <b>Genre:</b> <%= allVideo.genre %>
-                </li>
-                <!-- <li>
-                    <iframe width="420" height="315"
-                    src="<%= allVideo.videoLink %>">
-                    </iframe>
-                </li> -->
-                <li>
-                    <b>Recommended?</b> <%= allVideo.isRecommended %>
-                </li>
-            </ul>
-        <% }); %> 
-    </section>
+    <div id="popular_video">
+        <section id="video">
+            <% videos.forEach(allVideo => { %>
+                <ul class="video_list">
+                    <li>
+                        <b>Title:</b>
+                        <%= allVideo.title %>
+                    </li>
+                    <li>
+                        <a href="/video/<%= allVideo.id %>">
+                            <img 
+                            src="<%= allVideo.videoImage %>"
+                            alt="video image"
+                            width="200"
+                            height="100"/>
+                        </a>
+                    <li>
+                        <b>Description:</b> <%= allVideo.description %>
+                    </li>
+                    <li>
+                        <b>Genre:</b> <%= allVideo.genre %>
+                    </li>
+                    <li>
+                        <b>Recommended?</b> <%= allVideo.isRecommended %>
+                    </li>
+                </ul>
+            <% }); %> 
+        </section>
+    </div>
+
+    <div id="recommended_video">
+        <section id="video">
+                <% videos.forEach(allVideo => { %>
+                    <% if (allVideo.isRecommended === true) { %>
+                        <ul class="video_list">
+                            <li>
+                                <b>Title:</b>
+                                <%= allVideo.title %>
+                            </li>
+                            <li>
+                                <a href="/video/<%= allVideo.id %>">
+                                    <img 
+                                    src="<%= allVideo.videoImage %>"
+                                    alt="video image"
+                                    width="200"
+                                    height="100"/>
+                                </a>
+                            <li>
+                                <b>Description:</b> <%= allVideo.description %>
+                            </li>
+                            <li>
+                                <b>Genre:</b> <%= allVideo.genre %>
+                            </li>
+                            <li>
+                                <b>Recommended?</b> <%= allVideo.isRecommended %>
+                            </li>
+                        </ul>
+                    <% } %>
+                <% }); %> 
+        </section>
+    </div>
 
 
 </body>
