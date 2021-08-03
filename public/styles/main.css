@@ -2,12 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 2px solid red;
 }
 
 body {
-  background-color: #333533;
-  color: #E8EDDF;
+  background-color: #242423;
+  color: #242423;
   height: 1750px;
 }
 body .title {
@@ -43,6 +42,21 @@ body #show_video {
   display: flex;
   justify-content: center;
   align-content: center;
+}
+body .navbar {
+  background-color: #E8EDDF;
+}
+body .navbar-link {
+  color: #242423;
+}
+body .navbar-item {
+  color: #242423;
+}
+body #popular_video {
+  background-color: #CFDBD5;
+}
+body #recommended_video {
+  background-color: #E8EDDF;
 }
 
 /*# sourceMappingURL=main.css.map */
