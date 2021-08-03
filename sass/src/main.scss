@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 2px solid red;
+    // border: 2px solid red;
 }
 
 // $primary-color: #242423; // Eerie Black
@@ -14,13 +14,13 @@
 // $fourth-color: #CFDBD5; // Timberwolf
 
 body {
-    background-color: $alt-color;
-    color: $third-color;
+    background-color: $primary-color;
+    color: $primary-color;
     height: 1750px;
 
     .title {
         color: $secondary-color;
-        font-family: "Share Tech Mono", monospace, sans-serif;;
+        font-family: "Share Tech Mono", monospace, sans-serif;
     }
 
     #video {
@@ -56,6 +56,25 @@ body {
         display: flex;
         justify-content: center;
         align-content: center;
+    }
+
+    .navbar {
+        background-color: $third-color;
+    }
+    .navbar-link {
+        color: $primary-color;
+    }
+
+    .navbar-item {
+        color: $primary-color;
+    }
+
+    #popular_video {
+        background-color: $fourth-color;
+    }
+
+    #recommended_video {
+        background-color: $third-color;
     }
 }
 
