@@ -4,9 +4,6 @@ const app = express();
 const methodOverride = require('method-override');
 const PORT = 4000;
 
-// NOTE: Models
-const { Video }  = require('./models');
-
 // NOTE: Internal Modules
 const controllers = require('./controllers');
 
