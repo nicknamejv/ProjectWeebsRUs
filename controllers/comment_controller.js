@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { Comment }  = require('../models');
+const { Comment, Video }  = require('../models');
 
 // NOTE: INDEX Route
 router.get('/', (req, res, next) => {
@@ -50,6 +50,33 @@ router.get('/:id/edit', (req, res, next) => {
         };
         return res.render('comments/edit', context)
     });
+});
+
+//NOTE: Update Route (functional)
+router.put('/:id', (req, res, next ) => {
+    Comment.findByIdAndUpdate(req.params.id, {$set: req.body,},{new: true},
+        (error, updatedComment) => {
+            if(error) {
+                console.log(error);
+                req.error = error;
+                return next();
+            };
+
+            Video.find({comment: req.params.id}).populate('video').exec((error, allVideo) => {
+                if(error) {
+                    console.log(error);
+                    req.error  = error;
+                    return next();
+                };
+                const context = {
+                    comment: updatedComment,
+                    video: allVideo,
+                };
+                return res.redirect(`/video/${allVideo.id}`);
+
+            });
+        }
+    );
 });
 
 module.exports = router;
