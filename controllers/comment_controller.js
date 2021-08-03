@@ -37,4 +37,19 @@ router.post('/', (req, res, next) => {
     });
 });
 
+//NOTE: Update Route (presentational)
+router.get('/:id/edit', (req, res, next) => {
+    Comment.findById(req.params.id, (error, foundComment) => {
+        if(error) {
+            console.log(error);
+            req.error = error;
+            return next();
+        };
+        const context = {
+            comment: foundComment,
+        };
+        return res.render('comments/edit', context)
+    });
+});
+
 module.exports = router;
