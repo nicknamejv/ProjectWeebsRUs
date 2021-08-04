@@ -4,14 +4,21 @@ const router = express.Router();
 const { Video, Comment } = require('../models');
 
 // NOTE: INDEX Route
-router.get('/', (req, res) => {
-    Video.find({}, (error, allVideo) => {
+router.get('/', async (req, res) => {
+    try {
+    const allVideo = await Video.find({});
+
         const context = {
             videos: allVideo,
         };
 
         return res.render('videos/index', context);
-    });
+
+    } catch(error) {
+        console.log (error);
+        req.error = error;
+        return next();
+    };
 });
 
 // NOTE: SHOW Route
@@ -63,25 +70,43 @@ router.get('/:id', async (req, res, next) => {
 
 
 // NOTE: UPDATE Route
-router.put('/:id', (req, res, next) => {
-    Video.findByIdAndUpdate(
-        req.params.id, 
-        {
-            $set: req.body,
-        },
-        {
-            new: true,
-        },
+// router.put('/:id', (req, res, next) => {
+//     Video.findByIdAndUpdate(
+//         req.params.id, 
+//         {
+//             $set: req.body,
+//         },
+//         {
+//             new: true,
+//         },
         
-        (error, updatedRecommend) => {
-            if (error) {
-                console.log(error);
-                req.error = error;
-                return next();
-            };
+//         (error, updatedRecommend) => {
+//             if (error) {
+//                 console.log(error);
+//                 req.error = error;
+//                 return next();
+//             };
 
-        return res.redirect('/video');
-    });
+//         return res.redirect('/video');
+//     });
+// });
+
+router.put('/:id', async(req, res, next) => {
+    try {
+        const updatedVideo = await Video.findByIdAndUpdate(req.params.id,
+            {
+                $set: req.body,
+            },
+            {
+                new: true,
+            });
+
+    } catch(error) {
+        console.log (error);
+        req.error = error;
+        return next();
+
+    }
 });
 
 module.exports = router;
