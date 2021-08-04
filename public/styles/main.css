@@ -9,6 +9,10 @@ body {
   background-color: #242423;
   min-height: 100vh;
 }
+body #web_logo {
+  height: 75px;
+  width: 75px;
+}
 body .title {
   color: #242423;
   font-family: "Share Tech Mono", monospace, sans-serif;

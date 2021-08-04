@@ -122,7 +122,7 @@
                                 <div id="comment_modal">
                                     <div class="modal-card">
                                         <header class="modal-card-head">
-                                            <div class="toggle-modal">
+                                            <div class="toggle-modal" id="delete_modal">
                                                 <button class="delete" aria-label="close" ></button>
                                             </div>
                                         </header>
@@ -135,7 +135,7 @@
                                                     name="username" 
                                                     placeholder="Username"
                                                     value="<%= allComment.username %>"
-                                                    >
+                                                    />
                                                 </div>
                                         
                                                 <div>
@@ -145,7 +145,7 @@
                                                     name="content" 
                                                     placeholder="Have a comment?"
                                                     value="<%= allComment.content %>"
-                                                    >
+                                                    />
                                                 </div>
                                         
                                                 <!-- Here is our hidden input to provide the video id -->
@@ -165,8 +165,6 @@
                         </div>
                     
                     <div id="edit_delete">
-                        <!-- <a href="/comment/<%= allComment.id %>/edit">
-                        </a> -->
                         <button class="toggle-modal">Edit</button>
 
                         <form action="/comment/<%= allComment.id %>?_method=DELETE" method="POST">

@@ -50,6 +50,8 @@ router.get('/:id', async (req, res, next) => {
             comments: allComment,
         };
 
+        console.log(`${allComment} ========`);
+
         return res.render('videos/show', context);
         
     } catch (error) {
