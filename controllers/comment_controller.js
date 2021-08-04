@@ -32,17 +32,6 @@ router.post('/', (req, res, next) => {
             req.error = error;
             return next();
         };
-        
-        // Video.find({ video: comment.video }, (error, foundVideo) => {
-        //     if (error) {
-        //         console.log(error);
-        //         req.error = error;
-        //         return next();
-        //     };
-            
-        //     Video.comment.push(comment._id);
-        //     Video.save();
-        // });
 
         return res.redirect(`/${req.query.redirect}`);
     });
@@ -76,13 +65,13 @@ router.put('/:id', (req, res, next ) => {
         },
 
         (error, updatedComment) => {
-            if(error) {
+            if (error) {
                 console.log(error);
                 req.error = error;
                 return next();
             };
 
-            Video.find({ video: req.params.id }).populate('video').exec((error, allVideo) => {
+            Video.find({ video: updatedComment.video }).populate('video').exec((error, allVideo) => {
                 if (error) {
                     console.log(error);
                     req.error  = error;
@@ -94,7 +83,7 @@ router.put('/:id', (req, res, next ) => {
                 };
                 
                 console.log(context);
-                return res.redirect(`/comment`);
+                return res.redirect(`/video/${updatedComment.video}`);
             });
         }
     );
@@ -109,7 +98,7 @@ router.delete('/:id', (req, res, next) => {
             return next();
         };
         
-        return res.redirect('/comment');
+        return res.redirect(`/video/${deletedComment.video}`);
     });
 });
 
