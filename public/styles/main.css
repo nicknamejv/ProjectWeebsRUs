@@ -7,31 +7,31 @@
 
 body {
   background-color: #242423;
-  color: #F5CB5C;
-  height: 1750px;
+  height: 100%;
 }
 body .title {
   color: #F5CB5C;
   font-family: "Share Tech Mono", monospace, sans-serif;
 }
 body #video {
-  display: grid;
-  grid-template-columns: 200px 200px 200px 200px 200px;
-  grid-template-rows: 400px 400px 400px;
-  row-gap: 100px;
-  column-gap: 50px;
   padding: 5px;
   margin: 10px;
 }
 body #popular_video {
   contain: content;
   overflow: scroll;
-  height: 500px;
+  height: 575px;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 10px;
 }
 body #recommended_video {
   contain: content;
   overflow: scroll;
-  height: 500px;
+  height: 575px;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 10px;
 }
 body #show_page {
   display: flex;
@@ -57,7 +57,17 @@ body #popular_video {
   background-color: #333533;
 }
 body #recommended_video {
-  background-color: #E8EDDF;
+  background-color: #CFDBD5;
+}
+body .card {
+  transition: transform 0.2s;
+}
+body .card:hover {
+  transform: scale(1.1);
+}
+body a {
+  text-decoration: none;
+  color: #242423;
 }
 
 /*# sourceMappingURL=main.css.map */

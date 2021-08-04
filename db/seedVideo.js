@@ -35,7 +35,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
       },
       {
         title: 'Parasyte -the maxim-',
-        videoImage: 'https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABX_Tk_uwasMNmxGk0zrS9siSLVPHMBIp98WaR-87SGpDaOw8NYsuYRufuAy4mYp1Wcn1Iuo8fK_b7HtzPqPKSvkvIzTD.jpg?r=96d',
+        videoImage: 'https://m.media-amazon.com/images/M/MV5BZTViMTZlMjgtNjVmZC00NjEzLWJlN2QtMjQ4ZTYxNzBiZmMyXkEyXkFqcGdeQXVyNjc2NjA5MTU@._V1_FMjpg_UX1000_.jpg',
         description: 'Working together with an alien parasite to save the world',
         genre: 'Psychological',
         videoLink: 'https://www.youtube.com/embed/9-Kpcc5koXA',
@@ -62,7 +62,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
       },
       {
         title: 'Overlord',
-        videoImage: 'https://static3.srcdn.com/wordpress/wp-content/uploads/2021/07/Overlord-1.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5',
+        videoImage: 'https://m.media-amazon.com/images/M/MV5BOTFlY2NkOWItNTI3Yy00NDA5LTkzOTQtZGVmNDJlMzM4OGJlXkEyXkFqcGdeQXVyNDQxNjcxNQ@@._V1_FMjpg_UX1000_.jpg',
         description: 'Satoru gets stuck in a VRMMO and is taking over',
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/T7l-JbtU7M0',
@@ -71,7 +71,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
       },
       {
         title: 'Re: Zero',
-        videoImage: 'https://images-na.ssl-images-amazon.com/images/I/81okaytnGhL._RI_.jpg',
+        videoImage: 'https://m.media-amazon.com/images/M/MV5BOTNkMGJjYWQtZWNmNC00YzczLThiYTgtZmE4NzFmMDM2YmEzXkEyXkFqcGdeQXVyMTI3NDQ4MTM5._V1_.jpg',
         description: 'He thought he died, but then he came back to life as if at a checkpoint in a game',
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/Slz_rahWp6Y',
@@ -80,7 +80,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
       },
       {
         title: 'The Rising of the Shield Hero',
-        videoImage: 'https://images-na.ssl-images-amazon.com/images/I/811iet4L6DL._RI_.jpg',
+        videoImage: 'https://m.media-amazon.com/images/M/MV5BNTQ1ZGVjODAtNWYzZS00ZmZiLWExYjEtNmM1MjI2OTk1YWY3XkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg',
         description: 'Traveling through a new world as the shield hero can be exhausting',
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/rKnyi3TRznA',
@@ -98,7 +98,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
       },
       {
         title: 'Clannad',
-        videoImage: 'https://m.media-amazon.com/images/M/MV5BN2VmM2NmMGUtOGQ2OC00Y2ZjLTljNTctYjhmMDJjZjM1NTY3XkEyXkFqcGdeQXVyNDgyODgxNjE@._V1_.jpg',
+        videoImage: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bb47b6da-c15f-4ed7-94e3-b185c347b132/d4ouvdb-4e2ccd20-c0d2-49a8-91ca-e64094039cea.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2JiNDdiNmRhLWMxNWYtNGVkNy05NGUzLWIxODVjMzQ3YjEzMlwvZDRvdXZkYi00ZTJjY2QyMC1jMGQyLTQ5YTgtOTFjYS1lNjQwOTQwMzljZWEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.zrQ58MAHAffIZzkPa7iUIRCEIFFhRgPPe-U0pBxAGHE',
         description: 'Follow the life of Tomoya Okazaki who is a third year student slackin in school',
         genre: 'Slice of Life',
         videoLink: 'https://www.youtube.com/embed/TVZCU4qB8aQ',
@@ -107,7 +107,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
       },
       {
         title: 'Violet Evergarden',
-        videoImage: 'https://m.media-amazon.com/images/M/MV5BZmUzMThjOTItZGY4ZS00ODcwLTliNTMtYjVkM2JmY2QxNmRhXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_UY1200_CR93,0,630,1200_AL_.jpg',
+        videoImage: 'https://m.media-amazon.com/images/M/MV5BZmUzMThjOTItZGY4ZS00ODcwLTliNTMtYjVkM2JmY2QxNmRhXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_FMjpg_UX1000_.jpg',
         description: 'Follow the life of a young female ex sodier who gets a job as a writer',
         genre: 'Slice of Life',
         videoLink: 'https://www.youtube.com/embed/UZEOpfelkxQ',
