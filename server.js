@@ -11,14 +11,12 @@ const controllers = require('./controllers');
 app.set('view engine', 'ejs');
 
 // NOTE: Middleware 
+
 app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: true }));
 
 app.use(methodOverride('_method'));
-
-// app.use(require('./utils/genreLinks'));
-
 
 
 // SECTION: Controller Files 
