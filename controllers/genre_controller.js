@@ -16,7 +16,7 @@ const { Video }  = require('../models');
 
 router.get('/sliceoflife', async (req, res) => {
     try {
-    const allVideo = await Video.find({genre: 'Slice of Life' });
+    const allVideo = await Video.find({ genre: 'Slice of Life' });
         const context = {
             videos: allVideo,
         };
@@ -41,8 +41,8 @@ router.get('/sliceoflife', async (req, res) => {
 // });
 
 router.get('/psychological', async (req, res) => {
-    try{
-    const allVideo = await Video.find({genre: 'Psychological'});
+    try {
+    const allVideo = await Video.find({ genre: 'Psychological' });
 
         const context = {
             videos: allVideo,
@@ -69,8 +69,8 @@ router.get('/psychological', async (req, res) => {
 // });
 
 router.get('/journeytoanotherworld', async (req, res) => {
-    try{
-    const allVideo = await Video.find({genre: 'Journey to Another World'});
+    try {
+    const allVideo = await Video.find({ genre: 'Journey to Another World' });
 
         const context = {
             videos: allVideo,
