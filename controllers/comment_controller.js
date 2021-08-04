@@ -72,7 +72,7 @@ router.put('/:id', (req, res, next ) => {
                     comment: updatedComment,
                     video: allVideo,
                 };
-                return res.redirect(`/video/${allVideo.id}`);
+                return res.redirect(`/video/:id`);
 
             });
         }
