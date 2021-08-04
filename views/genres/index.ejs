@@ -5,12 +5,15 @@
     <%- include('../partials/head/_head') %> 
 
 <body>
+        <!-- Nav Partial -->
+    <%- include('../partials/navbar/_navbar') %>
 
-    <h1 class='title'>
-        Weebs R Us
-    </h1>
+    <section class="hero is-small is-warning">
+        <h1 class="title is-1">
+            Weebs R Us - Psychological
+        </h1>
+    </section>
 
-    <a href="/video"><button>Video Index</button></a>
     <a href="/comment"><button>Comment Index</button></a>
     
     <section id="video">
@@ -33,14 +36,6 @@
                 </li>
                 <li>
                     <b>Genre:</b> <%= allVideo.genre %>
-                </li>
-                <!-- <li>
-                    <iframe width="420" height="315"
-                    src="<%= allVideo.videoLink %>">
-                    </iframe>
-                </li> -->
-                <li>
-                    <b>Recommended?</b> <%= allVideo.isRecommended %>
                 </li>
             </ul>
         <% }); %> 
