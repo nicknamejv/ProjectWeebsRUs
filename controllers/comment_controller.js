@@ -77,6 +77,7 @@ router.put('/:id', (req, res, next ) => {
                     req.error  = error;
                     return next();
                 };
+                
                 const context = {
                     comment: updatedComment,
                     video: allVideo,
