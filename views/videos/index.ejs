@@ -7,21 +7,23 @@
 <body>
         <!-- Nav Partial -->
     <%- include('../partials/navbar/_navbar') %> 
-    <section class="hero is-small is-warning">
-        <h1 class="title is-1">
+    <section class="hero is-small" id="main_title">
+        <h1 class="title is-1" id="weeb_title">
             Weebs R Us
         </h1>
     </section>
-    
+
+    <br>
+
+    <h1 class="title has-text-centered" id="index_title">Popular Anime</h1>
     <main class="container is-max-widescreen">
         <div id="popular_video">
-            <h1 class="title has-text-centered">Popular Anime</h1>
                 <section id="video">
                     <div class="columns">
                         <% videos.forEach(allVideo => { %>
                             <ul class="video_list">
                                 <div class="column is-full">
-                                    <div class="card">
+                                    <div class="card" id="index_card">
                                         <div class="card-image">
                                             <figure class="image is-4by4">
                                                 <a href="/video/<%= allVideo.id %>">
@@ -53,15 +55,17 @@
                 </section>
         </div>
 
+        <br>
+
+        <h1 class="title has-text-centered" id="index_title">User Recommended Anime</h1>
         <div id="recommended_video">
-            <h1 class="title has-text-centered">User Recommended Anime</h1>
                 <section id="video">
                     <div class="columns">
                         <% videos.forEach(allVideo => { %>
                             <% if (allVideo.isRecommended === true) { %>
                                 <ul class="recommended_list">
                                     <div class="column is-full">
-                                        <div class="card">
+                                        <div class="card" id="index_card">
                                             <div class="card-image">
                                                 <figure class="image is-4by4">
                                                     <a href="/video/<%= allVideo.id %>">
@@ -91,6 +95,8 @@
                     </div>
                 </section>
         </div>
+
+        <br>
     </main>
 
 

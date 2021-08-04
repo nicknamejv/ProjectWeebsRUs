@@ -8,39 +8,50 @@
         <!-- Nav Partial -->
     <%- include('../partials/navbar/_navbar') %>
 
-    <section class="hero is-small is-warning">
-        <h1 class="title is-1">
+    <section class="hero is-small" id="main_title">
+        <h1 class="title is-1" id="weeb_title">
             Weebs R Us - Psychological
         </h1>
     </section>
 
-    <a href="/comment"><button>Comment Index</button></a>
-    
-    <section id="video">
-        <% videos.forEach(allVideo => { %>
-            <ul class="video_list">
-                <li>
-                    <b>Title:</b>
-                    <%= allVideo.title %>
-                </li>
-                <li>
-                    <a href="/video/<%= allVideo.id %>">
-                        <img 
-                        src="<%= allVideo.videoImage %>"
-                        alt="video image"
-                        width="200"
-                        height="100"/>
-                    </a>
-                <li>
-                    <b>Description:</b> <%= allVideo.description %>
-                </li>
-                <li>
-                    <b>Genre:</b> <%= allVideo.genre %>
-                </li>
-            </ul>
-        <% }); %> 
-        </section>
-
-
+    <main class="container is-max-widescreen">
+        <div id="popular_video">
+            <section id="video">
+                <div class="columns">
+                    <% videos.forEach(allVideo => { %>
+                        <ul class="video_list">
+                            <div class="column is-full">
+                                <div class="card" id="index_card">
+                                    <div class="card-image">
+                                        <figure class="image is-4by4">
+                                            <a href="/video/<%= allVideo.id %>">
+                                                <img 
+                                                src="<%= allVideo.videoImage %>"
+                                                alt="video image"
+                                                />
+                                            </a>
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <li>
+                                            <b>Title:</b>
+                                            <%= allVideo.title %>
+                                        </li>
+                                        <li>
+                                        <li>
+                                            <b>Description:</b> <%= allVideo.description %>
+                                        </li>
+                                        <li>
+                                            <b>Genre:</b> <%= allVideo.genre %>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul> 
+                    <% }); %>
+                </div>
+            </section>
+        </div>
+    </main>
 </body>
 </html>
