@@ -6,11 +6,13 @@
 
 <body>
         <!-- Nav Partial -->
-    <%- include('../partials/navbar/_navbar') %>
+    <%- include('../partials/navbar/_navbar')%>
 
     <section class="hero is-small" id="main_title">
         <h1 class="title is-1" id="weeb_title">
-            Weebs R Us - Psychological
+            Weebs R Us - <% for(let i = 0; i < 1; i++ ) { %>
+                <%= videos[i].genre %>
+            <% } %>
         </h1>
     </section>
 
