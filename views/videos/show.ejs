@@ -9,118 +9,161 @@
         <!-- Nav Partial -->
     <%- include('../partials/navbar/_navbar') %> 
     
-    <section class="hero is-small is-warning">
+    <section class="hero is-small" id="main_title">
         <h1 class="title is-1">
             Weebs R Us - Show Page
         </h1>
     </section>
-
-    <a href="/video"><button>Video Index</button></a>
-    <a href="/comment"><button>Comment Index</button></a>
-
+    
     <div id="show_page">
-    <section id="show_video">
-            <ul class="show_list">
-                <li>
-                    <b>Title:</b>
-                    <%= video.title %>
-                </li>
-                <li>
-                    <b>ID:</b>
-                    <%= video.id %>
-                </li>
-                <li>
-                    <b>Image:</b> <%= video.videoImage %>
-                </li>
-                <li>
-                    <b>Description:</b> <%= video.description %>
-                </li>
-                <li>
-                    <b>Genre:</b> <%= video.genre %>
-                </li>
-                <li>
-                    <div id="show_video">
-                        <iframe 
-                        width="1000" 
-                        height="700"
-                        src="<%= video.videoLink %>">
-                        </iframe>
+        <div class="card" id="show_card">
+            <div class="block">
+                <section id="show_video">
+                    <ul class="show_list">
+                        <li>
+                            <h1 class="title is-1" id="video_title">
+                                <%= video.title %>
+                            </h1>
+                        </li>
+                        <li>
+                            <h2 class="subtitle is-4">
+                            <b>Description:</b> <%= video.description %>
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="subtitle is-4">
+                            <b>Genre:</b> <%= video.genre %>
+                            </h2>
+                        </li>
+                        <li>
+                            <div id="show_video">
+                                <iframe 
+                                width="1000" 
+                                height="700"
+                                src="<%= video.videoLink %>">
+                                </iframe>
+                            </div>
+                        </li>
+                        <li>
+                            <form action="/video/<%=video.id %>?_method=PUT" method="POST">
+                                <div id="recommend_button">
+                                    <label for="recommendation">Would you recommend?</label>
+                                        <select name="isRecommended" id="recommendation_form">
+                                            <option value="true">Yes</option>
+                                            <option value="false">No</option>
+                                        </select>
+                                        <input type="submit" value="Submit" id="submit_button">
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <div class="card" id="comment_form">  
+            <section class="comment_form">
+                <form action="/comment?redirect=video%2F<%= video._id %> " method="POST">
+                    <div>
+                        <label for="username_comment">Username:</label>
+                        <input 
+                        type="text" 
+                        name="username" 
+                        placeholder="Username"
+                        >
                     </div>
-                </li>
-                <li>
-                    <form action="/video/<%=video.id %>?_method=PUT" method="POST">
-                        <div>
-                            <label for="recommendation">Would you recommend?</label>
-                                <select name="isRecommended" id="recommendation_form">
-                                    <option value="true">Yes</option>
-                                    <option value="false">No</option>
-                                </select>
-                                <input type="submit" value="Submit">
-                        </div>
-                    </form>
-                </li>
-            </ul>
-    </section>
-    
-    <section class="comment_form">
-        <form action="/comment?redirect=video%2F<%= video._id %> " method="POST">
-            <div>
-                <label for="username_comment">Username</label>
-                <input 
-                type="text" 
-                name="username" 
-                placeholder="Username"
-                >
-            </div>
 
-            <div>
-                <label for="comment_content">Content</label>
-                <input 
-                type="text" 
-                name="content" 
-                placeholder="Have a comment?"
-                >
-            </div>
+                    <div>
+                        <label for="comment_content">Content:</label>
+                        <input 
+                        type="text" 
+                        name="content" 
+                        placeholder="Have a comment?"
+                        >
+                    </div>
 
-            <!-- Here is our hidden input to provide the product id -->
-            <input 
-            type="hidden"
-            name="video"
-            value="<%= video._id %>"/>
+                    <!-- Here is our hidden input to provide the product id -->
+                    <input 
+                    type="hidden"
+                    name="video"
+                    value="<%= video._id %>"/>
 
-            <div>
-                <button>Submit</button>
-            </div>
-        </form>
-    </section>
-
-    <section id="comment">
-        <% comments.forEach(allComment => { %>
-            <ul class="comment_list">
-                <li>
-                    <b>Username:</b> <%= allComment.username %> 
-                </li>
-                <li>
-                    <b>Content:</b> <%= allComment.content %>
-                    <small>
-                    <%= new Date(allComment.createdAt).toLocaleString() %>
-                    </small> 
-                </li>
-            </ul>
-
-            <a href="/comment/<%= allComment.id %>/edit">
-                <button>Edit</button>   
-            </a>
-            
-            <div id="delete_button">
-                <form action="/comment/<%= allComment.id %>?_method=DELETE" method="POST">
-                    <button>Delete</button>
+                    <div id="comment_submit">
+                        <button id="comment_button">Submit</button>
+                    </div>
                 </form>
+            </section>
+        </div>  
+        
+        <label for="comments" id="comment_label">Comment Section
+            <div class="card" id="comment_section">
+                <section id="comment">
+                    <% comments.forEach(allComment => { %>
+                        <ul class="comment_list">
+                            <li>
+                                <b>Username:</b> <%= allComment.username %> 
+                            </li>
+                            <li>
+                                <b>Content:</b> <%= allComment.content %>
+                                <small>
+                                <%= new Date(allComment.createdAt).toLocaleString() %>
+                                </small> 
+                            </li>
+                        </ul>
+
+                        <div id="edit_delete">
+                            <a href="/comment/<%= allComment.id %>/edit">
+                                <button>Edit</button>   
+                            </a>
+
+                            <div class="modal">
+                                <div class="modal-background">
+                                    <div class="modal-content">
+                                        <form action="/comment/<%= allComment.id %>?_method=PUT" method="POST">
+                                            <div>
+                                                <label for="username_comment">Username:</label>
+                                                <input 
+                                                type="text" 
+                                                name="username" 
+                                                placeholder="Username"
+                                                value="<%= allComment.username %>"
+                                                >
+                                            </div>
+                                    
+                                            <div>
+                                                <label for="comment_content">Content</label>
+                                                <input 
+                                                type="text" 
+                                                name="content" 
+                                                placeholder="Have a comment?"
+                                                value="<%= allComment.content %>"
+                                                >
+                                            </div>
+                                    
+                                            <!-- Here is our hidden input to provide the video id -->
+                                            <input 
+                                            type="hidden"
+                                            name="comment"
+                                            value="<%= allComment._id %>"/>
+                                    
+                                            <div>
+                                                <button>Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <button class="modal-close is-large" aria-label="close"></button>
+                            </div>
+
+                            <form action="/comment/<%= allComment.id %>?_method=DELETE" method="POST">
+                                <button>Delete</button>
+                            </form>
+                        </div>
+                        <br>
+                    <% }) %>
+                </section>
             </div>
-            
-        <% }) %>
-    </section>
-    
+        </label>
     </div>
 </body>
 </html>
