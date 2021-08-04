@@ -7,9 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/comment?redirect=video%2f<%= allVideo._id %>?_method=PUT" method="POST">
+    <form action="/comment/<%= comment.id %>?_method=PUT" method="POST">
         <div>
-            <label for="username_comment">Username</label>
+            <label for="username_comment">Username:</label>
             <input 
             type="text" 
             name="username" 
@@ -27,6 +27,13 @@
             value="<%= comment.content %>"
             >
         </div>
+
+        <!-- Here is our hidden input to provide the video id -->
+        <input 
+        type="hidden"
+        name="comment"
+        value="<%= comment._id %>"/>
+
         <div>
             <button>Submit</button>
         </div>

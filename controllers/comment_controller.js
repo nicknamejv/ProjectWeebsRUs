@@ -32,6 +32,17 @@ router.post('/', (req, res, next) => {
             req.error = error;
             return next();
         };
+        
+        // Video.find({ video: comment.video }, (error, foundVideo) => {
+        //     if (error) {
+        //         console.log(error);
+        //         req.error = error;
+        //         return next();
+        //     };
+            
+        //     Video.comment.push(comment._id);
+        //     Video.save();
+        // });
 
         return res.redirect(`/${req.query.redirect}`);
     });
@@ -40,21 +51,30 @@ router.post('/', (req, res, next) => {
 //NOTE: Update Route (presentational)
 router.get('/:id/edit', (req, res, next) => {
     Comment.findById(req.params.id, (error, foundComment) => {
-        if(error) {
+        if (error) {
             console.log(error);
             req.error = error;
             return next();
         };
+
         const context = {
             comment: foundComment,
         };
+
         return res.render('comments/edit', context)
     });
 });
 
-//NOTE: Update Route (functional)
+// NOTE: Update Route (functional)
 router.put('/:id', (req, res, next ) => {
-    Comment.findByIdAndUpdate(req.params.id, {$set: req.body,},{new: true},
+    Comment.findByIdAndUpdate(req.params.id,
+        { 
+            $set: req.body
+        }, 
+        {
+            new: true 
+        },
+
         (error, updatedComment) => {
             if(error) {
                 console.log(error);
@@ -62,8 +82,8 @@ router.put('/:id', (req, res, next ) => {
                 return next();
             };
 
-            Video.find({comment: req.params.id}).populate('video').exec((error, allVideo) => {
-                if(error) {
+            Video.find({ video: req.params.id }).populate('video').exec((error, allVideo) => {
+                if (error) {
                     console.log(error);
                     req.error  = error;
                     return next();
@@ -72,11 +92,30 @@ router.put('/:id', (req, res, next ) => {
                     comment: updatedComment,
                     video: allVideo,
                 };
+<<<<<<< HEAD
                 return res.redirect(`/video/:id`);
 
+=======
+                
+                console.log(context);
+                return res.redirect(`/comment`);
+>>>>>>> d25af40fa1ee462cdc6222d3e9cb6d020827d133
             });
         }
     );
+});
+
+// NOTE: DESTROY Route 
+router.delete('/:id', (req, res, next) => {
+    Comment.findByIdAndDelete(req.params.id, (error, deletedComment) => {
+        if (error) {
+            console.log(error);
+            req.error = error;
+            return next();
+        };
+        
+        return res.redirect('/comment');
+    });
 });
 
 module.exports = router;
