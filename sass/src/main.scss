@@ -15,7 +15,7 @@
 
 body {
     background-color: $primary-color;
-    color: $primary-color;
+    color: $secondary-color;
     height: 1750px;
 
     .title {
@@ -70,7 +70,7 @@ body {
     }
 
     #popular_video {
-        background-color: $fourth-color;
+        background-color: $alt-color;
     }
 
     #recommended_video {

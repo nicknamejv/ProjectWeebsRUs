@@ -7,7 +7,7 @@
 
 body {
   background-color: #242423;
-  color: #242423;
+  color: #F5CB5C;
   height: 1750px;
 }
 body .title {
@@ -54,7 +54,7 @@ body .navbar-item {
   color: #242423;
 }
 body #popular_video {
-  background-color: #CFDBD5;
+  background-color: #333533;
 }
 body #recommended_video {
   background-color: #E8EDDF;
