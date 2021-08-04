@@ -13,6 +13,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Psychological',
         videoLink: 'https://www.youtube.com/embed/V26rLTwuRqE',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'The Promised Neverland',
@@ -21,6 +22,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Psychological',
         videoLink: 'https://www.youtube.com/embed/eBwApg_nAvY',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Code Geass',
@@ -29,6 +31,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Psychological',
         videoLink: 'https://www.youtube.com/embed/v-AGjx0N24U',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Parasyte -the maxim-',
@@ -37,6 +40,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Psychological',
         videoLink: 'https://www.youtube.com/embed/9-Kpcc5koXA',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Tokyo Ghoul',
@@ -45,6 +49,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Psychological',
         videoLink: 'https://www.youtube.com/embed/ETHpMMV8rJU',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Sword Art Online',
@@ -53,6 +58,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/ALCLCvNJ7iY',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Overlord',
@@ -61,6 +67,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/T7l-JbtU7M0',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Re: Zero',
@@ -69,6 +76,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/Slz_rahWp6Y',
         isRecommended: true,
+        comment: [],
       },
       {
         title: 'The Rising of the Shield Hero',
@@ -77,6 +85,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/rKnyi3TRznA',
         isRecommended: true,
+        comment: [],
       },
       {
         title: 'That Time I Got Reincarnated as a Slime',
@@ -85,6 +94,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Journey to Another World',
         videoLink: 'https://www.youtube.com/embed/uOzwqb74K34',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Clannad',
@@ -93,6 +103,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Slice of Life',
         videoLink: 'https://www.youtube.com/embed/TVZCU4qB8aQ',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Violet Evergarden',
@@ -101,6 +112,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Slice of Life',
         videoLink: 'https://www.youtube.com/embed/UZEOpfelkxQ',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Hyouka',
@@ -109,6 +121,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Slice of Life',
         videoLink: 'https://www.youtube.com/embed/KbIUra_o2wc',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Your Lie In April',
@@ -117,6 +130,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Slice of Life',
         videoLink: 'https://www.youtube.com/embed/3aL0gDZtFbE',
         isRecommended: false,
+        comment: [],
       },
       {
         title: 'Only Yesterday (1991)',
@@ -125,6 +139,7 @@ Video.deleteMany({}, (error, deletedVideos) => {
         genre: 'Slice of Life',
         videoLink: 'https://www.youtube.com/embed/x0ZrjocXVJ4',
         isRecommended: false,
+        comment: [],
       },
       
 

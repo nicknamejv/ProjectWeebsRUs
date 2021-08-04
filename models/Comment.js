@@ -13,7 +13,7 @@ const commentSchema = new mongoose.Schema(
         },
 
         video: {
-            type: mongoose.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: 'Video',
             required: true,
         },
