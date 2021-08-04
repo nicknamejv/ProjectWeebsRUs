@@ -92,14 +92,9 @@ router.put('/:id', (req, res, next ) => {
                     comment: updatedComment,
                     video: allVideo,
                 };
-<<<<<<< HEAD
-                return res.redirect(`/video/:id`);
-
-=======
                 
                 console.log(context);
                 return res.redirect(`/comment`);
->>>>>>> d25af40fa1ee462cdc6222d3e9cb6d020827d133
             });
         }
     );

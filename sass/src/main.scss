@@ -15,8 +15,7 @@
 
 body {
     background-color: $primary-color;
-    color: $secondary-color;
-    height: 1750px;
+    height: 100%;
 
     .title {
         color: $secondary-color;
@@ -24,11 +23,6 @@ body {
     }
 
     #video {
-        display: grid;
-        grid-template-columns: 200px 200px 200px 200px 200px;
-        grid-template-rows: 400px 400px 400px;
-        row-gap: 100px;
-        column-gap: 50px;
         padding: 5px;
         margin: 10px;
     }
@@ -36,13 +30,19 @@ body {
     #popular_video {
         contain: content;
         overflow: scroll;
-        height: 500px;
+        height: 575px;
+        border-radius: 25px;
+        margin: 10px;
+        padding: 10px;
     }
 
     #recommended_video {
         contain: content;
         overflow: scroll;
-        height: 500px;
+        height: 575px;
+        border-radius: 25px;
+        margin: 10px;
+        padding: 10px;
     }
 
     #show_page {
@@ -74,7 +74,20 @@ body {
     }
 
     #recommended_video {
-        background-color: $third-color;
+        background-color: $fourth-color;
+    }
+
+    .card {
+        transition: transform .2s;
+    }
+
+    .card:hover {
+        transform: scale(1.1); 
+    }
+
+    a {
+        text-decoration:none;
+        color: $primary-color;
     }
 }
 
