@@ -31,12 +31,6 @@ const videoSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
-
-        comment: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Comment',
-            required: true,
-        }]
     },
 
     {
