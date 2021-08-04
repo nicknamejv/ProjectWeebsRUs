@@ -75,7 +75,7 @@ body .navbar {
 body #nav_content {
   padding: 10px;
   background-color: #E8EDDF;
-  margin-right: 50px;
+  margin-right: 85px;
 }
 body .navbar-link {
   color: #242423;
@@ -191,6 +191,30 @@ body #edit_delete button {
   font-size: 13px;
   padding: 5px;
   margin: 3px;
+  font-family: "Share Tech Mono", monospace, sans-serif;
+}
+body .modal-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .modal-background .modal-card-head {
+  background-color: #F5CB5C;
+  height: 25px;
+}
+body .modal-card-body {
+  background-color: #242423;
+  text-align: center;
+}
+body .modal-card-body input {
+  background-color: #333533;
+  color: white;
+  font-family: "Share Tech Mono", monospace, sans-serif;
+}
+body .modal-card-body #submit_button {
+  font-family: "Share Tech Mono", monospace, sans-serif;
+  font-size: 13px;
 }
 
 /*# sourceMappingURL=main.css.map */

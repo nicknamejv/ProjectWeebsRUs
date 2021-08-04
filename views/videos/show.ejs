@@ -15,6 +15,7 @@
         </h1>
     </section>
     
+    <!-- VIDEO -->
     <div id="show_page">
         <div class="card" id="show_card">
             <div class="block">
@@ -61,6 +62,7 @@
             </div>
         </div>
 
+        <!-- COMMENT FORM -->
         <div class="card" id="comment_form">  
             <section class="comment_form">
                 <form action="/comment?redirect=video%2F<%= video._id %> " method="POST">
@@ -70,6 +72,7 @@
                         type="text" 
                         name="username" 
                         placeholder="Username"
+                        required
                         >
                     </div>
 
@@ -79,6 +82,7 @@
                         type="text" 
                         name="content" 
                         placeholder="Have a comment?"
+                        required
                         >
                     </div>
 
@@ -94,7 +98,8 @@
                 </form>
             </section>
         </div>  
-        
+
+        <!-- COMMENT AREA -->
         <label for="comments" id="comment_label">Comment Section
             <div class="card" id="comment_section">
                 <section id="comment">
@@ -111,54 +116,63 @@
                             </li>
                         </ul>
 
-                        <div id="edit_delete">
-                            <a href="/comment/<%= allComment.id %>/edit">
-                                <button>Edit</button>   
-                            </a>
-
-                            <div class="modal">
-                                <div class="modal-background">
-                                    <div class="modal-content">
-                                        <form action="/comment/<%= allComment.id %>?_method=PUT" method="POST">
-                                            <div>
-                                                <label for="username_comment">Username:</label>
+                        <!-- COMMENT MODAL -->
+                        <div class="modal">
+                            <div class="modal-background">
+                                <div id="comment_modal">
+                                    <div class="modal-card">
+                                        <header class="modal-card-head">
+                                            <div class="toggle-modal">
+                                                <button class="delete" aria-label="close" ></button>
+                                            </div>
+                                        </header>
+                                        <section class="modal-card-body">
+                                            <form action="/comment/<%= allComment.id %>?_method=PUT" method="POST">
+                                                <div>
+                                                    <label for="username_comment">Username:</label>
+                                                    <input 
+                                                    type="text" 
+                                                    name="username" 
+                                                    placeholder="Username"
+                                                    value="<%= allComment.username %>"
+                                                    >
+                                                </div>
+                                        
+                                                <div>
+                                                    <label for="comment_content">Content</label>
+                                                    <input 
+                                                    type="text" 
+                                                    name="content" 
+                                                    placeholder="Have a comment?"
+                                                    value="<%= allComment.content %>"
+                                                    >
+                                                </div>
+                                        
+                                                <!-- Here is our hidden input to provide the video id -->
                                                 <input 
-                                                type="text" 
-                                                name="username" 
-                                                placeholder="Username"
-                                                value="<%= allComment.username %>"
-                                                >
-                                            </div>
-                                    
-                                            <div>
-                                                <label for="comment_content">Content</label>
-                                                <input 
-                                                type="text" 
-                                                name="content" 
-                                                placeholder="Have a comment?"
-                                                value="<%= allComment.content %>"
-                                                >
-                                            </div>
-                                    
-                                            <!-- Here is our hidden input to provide the video id -->
-                                            <input 
-                                            type="hidden"
-                                            name="comment"
-                                            value="<%= allComment._id %>"/>
-                                    
-                                            <div>
-                                                <button>Submit</button>
-                                            </div>
-                                        </form>
+                                                type="hidden"
+                                                name="comment"
+                                                value="<%= allComment._id %>"/>
+                                        
+                                                <div>
+                                                    <button id="submit_button">Submit</button>
+                                                </div>
+                                            </form>
+                                        </section>
                                     </div>
                                 </div>
-                                <button class="modal-close is-large" aria-label="close"></button>
                             </div>
-
-                            <form action="/comment/<%= allComment.id %>?_method=DELETE" method="POST">
-                                <button>Delete</button>
-                            </form>
                         </div>
+                    
+                    <div id="edit_delete">
+                        <!-- <a href="/comment/<%= allComment.id %>/edit">
+                        </a> -->
+                        <button class="toggle-modal">Edit</button>
+
+                        <form action="/comment/<%= allComment.id %>?_method=DELETE" method="POST">
+                            <button>Delete</button>
+                        </form>
+                    </div>
                         <br>
                     <% }) %>
                 </section>
