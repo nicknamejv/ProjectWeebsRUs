@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // border: 2px solid red;
 }
 
 // $primary-color: #242423; // Eerie Black
@@ -15,11 +14,37 @@
 
 body {
     background-color: $primary-color;
-    height: 100%;
+    min-height: 100vh;
 
     .title {
-        color: $secondary-color;
+        color: $primary-color;
         font-family: "Share Tech Mono", monospace, sans-serif;
+    }
+    
+    #main_title {
+        background-color: $secondary-color;
+        padding: 5px;
+        padding-left: 10px;
+        text-align: center;
+    }
+
+    #weeb_title {
+        font-size: 65px;
+    }
+
+    #index_title {
+        color: $secondary-color;
+        padding: 5px;
+        margin: 5px;
+        font-size: 30px;
+    }
+
+    #video_title {
+        color: $secondary-color;
+    }
+
+    .subtitle {
+        color: $secondary-color;
     }
 
     #video {
@@ -30,7 +55,7 @@ body {
     #popular_video {
         contain: content;
         overflow: scroll;
-        height: 575px;
+        height: 750px;
         border-radius: 25px;
         margin: 10px;
         padding: 10px;
@@ -39,7 +64,7 @@ body {
     #recommended_video {
         contain: content;
         overflow: scroll;
-        height: 575px;
+        height: 750px;
         border-radius: 25px;
         margin: 10px;
         padding: 10px;
@@ -50,6 +75,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 10px;
     }
 
     #show_video {
@@ -58,15 +84,30 @@ body {
         align-content: center;
     }
 
+    .show_list {
+        color: $fourth-color;
+    }
+
     .navbar {
         background-color: $third-color;
     }
+
+    #nav_content {
+        padding: 10px;
+        background-color: $third-color;
+        margin-right: 50px;
+    }
+
     .navbar-link {
         color: $primary-color;
     }
 
+    .navbar-dropdown {
+        background-color: $primary-color;
+    }
+
     .navbar-item {
-        color: $primary-color;
+        color: $secondary-color;
     }
 
     #popular_video {
@@ -74,20 +115,125 @@ body {
     }
 
     #recommended_video {
-        background-color: $fourth-color;
+        background-color: $secondary-color;
     }
 
-    .card {
+    #index_card {
         transition: transform .2s;
+        background-color: $primary-color;
+        color: $secondary-color;
+        font-family: "Share Tech Mono", monospace, sans-serif;
     }
 
-    .card:hover {
+    #index_card:hover {
         transform: scale(1.1); 
+    }
+
+    #show_card {
+        background-color: #131313;
+        border-radius: 10px;
+        padding: 10px;
     }
 
     a {
         text-decoration:none;
         color: $primary-color;
+    }
+
+    .button {
+        pointer-events: none;
+        background-color: $primary-color;
+        color: $secondary-color;
+    }
+
+    #recommend_button {
+        color: $secondary-color;
+        padding: 5px;
+        font-weight: bold;
+        font-family: "Share Tech Mono", monospace, sans-serif;
+        font-size: 20px;
+    }
+
+    #recommendation_form {
+        font-family: "Share Tech Mono", monospace, sans-serif;
+        background-color: $primary-color;
+        color: $secondary-color;
+        font-size: 20px;
+    }
+
+    #submit_button {
+        color: $secondary-color;
+        background-color: $alt-color;
+        padding: 3px;
+        font-weight: bold;
+        font-family: "Share Tech Mono", monospace, sans-serif;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    #comment_label {
+        font-family: "Share Tech Mono", monospace, sans-serif;
+        color: $secondary-color;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #comment_form {
+        font-family: "Share Tech Mono", monospace, sans-serif;
+        color: $primary-color;
+        background-color: $secondary-color;
+        padding: 10px;
+        margin: 10px;
+        font-weight: bold;
+        text-align: center;
+        font-size: 18px;
+        
+        input {
+            background-color: $primary-color;
+            color: white;
+            font-family: "Share Tech Mono", monospace, sans-serif;
+        }
+    }
+
+    #comment_submit {
+        text-align: center;
+        
+    }
+
+    #comment_button {
+        color: $secondary-color;
+        background-color: $alt-color;
+        font-family: "Share Tech Mono", monospace, sans-serif;
+        font-size: 15px;
+        padding: 3px;
+        border-radius: 5px;
+    }
+
+    #comment_section {
+        color: $secondary-color;
+        background-color: $alt-color;
+        font-family: "Share Tech Mono", monospace, sans-serif;
+        border-radius: 5px;
+        font-size: 20px;
+        padding: 20px;
+        width: 25vw;
+        text-align: left;
+    }
+
+    #comment button {
+        color: $secondary-color;
+        background-color: $alt-color;
+        border-radius: 5px;
+    }
+
+    #edit_delete {
+        display: flex;
+    }
+
+    #edit_delete button {
+        font-size: 13px;
+        padding: 5px;
+        margin: 3px;
     }
 }
 

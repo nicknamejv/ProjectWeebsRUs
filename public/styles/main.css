@@ -7,11 +7,32 @@
 
 body {
   background-color: #242423;
-  height: 100%;
+  min-height: 100vh;
 }
 body .title {
-  color: #F5CB5C;
+  color: #242423;
   font-family: "Share Tech Mono", monospace, sans-serif;
+}
+body #main_title {
+  background-color: #F5CB5C;
+  padding: 5px;
+  padding-left: 10px;
+  text-align: center;
+}
+body #weeb_title {
+  font-size: 65px;
+}
+body #index_title {
+  color: #F5CB5C;
+  padding: 5px;
+  margin: 5px;
+  font-size: 30px;
+}
+body #video_title {
+  color: #F5CB5C;
+}
+body .subtitle {
+  color: #F5CB5C;
 }
 body #video {
   padding: 5px;
@@ -20,7 +41,7 @@ body #video {
 body #popular_video {
   contain: content;
   overflow: scroll;
-  height: 575px;
+  height: 750px;
   border-radius: 25px;
   margin: 10px;
   padding: 10px;
@@ -28,7 +49,7 @@ body #popular_video {
 body #recommended_video {
   contain: content;
   overflow: scroll;
-  height: 575px;
+  height: 750px;
   border-radius: 25px;
   margin: 10px;
   padding: 10px;
@@ -38,36 +59,138 @@ body #show_page {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 body #show_video {
   display: flex;
   justify-content: center;
   align-content: center;
 }
+body .show_list {
+  color: #CFDBD5;
+}
 body .navbar {
   background-color: #E8EDDF;
+}
+body #nav_content {
+  padding: 10px;
+  background-color: #E8EDDF;
+  margin-right: 50px;
 }
 body .navbar-link {
   color: #242423;
 }
+body .navbar-dropdown {
+  background-color: #242423;
+}
 body .navbar-item {
-  color: #242423;
+  color: #F5CB5C;
 }
 body #popular_video {
   background-color: #333533;
 }
 body #recommended_video {
-  background-color: #CFDBD5;
+  background-color: #F5CB5C;
 }
-body .card {
+body #index_card {
   transition: transform 0.2s;
+  background-color: #242423;
+  color: #F5CB5C;
+  font-family: "Share Tech Mono", monospace, sans-serif;
 }
-body .card:hover {
+body #index_card:hover {
   transform: scale(1.1);
+}
+body #show_card {
+  background-color: #131313;
+  border-radius: 10px;
+  padding: 10px;
 }
 body a {
   text-decoration: none;
   color: #242423;
+}
+body .button {
+  pointer-events: none;
+  background-color: #242423;
+  color: #F5CB5C;
+}
+body #recommend_button {
+  color: #F5CB5C;
+  padding: 5px;
+  font-weight: bold;
+  font-family: "Share Tech Mono", monospace, sans-serif;
+  font-size: 20px;
+}
+body #recommendation_form {
+  font-family: "Share Tech Mono", monospace, sans-serif;
+  background-color: #242423;
+  color: #F5CB5C;
+  font-size: 20px;
+}
+body #submit_button {
+  color: #F5CB5C;
+  background-color: #333533;
+  padding: 3px;
+  font-weight: bold;
+  font-family: "Share Tech Mono", monospace, sans-serif;
+  font-size: 20px;
+  border-radius: 5px;
+}
+body #comment_label {
+  font-family: "Share Tech Mono", monospace, sans-serif;
+  color: #F5CB5C;
+  font-size: 20px;
+  font-weight: bold;
+}
+body #comment_form {
+  font-family: "Share Tech Mono", monospace, sans-serif;
+  color: #242423;
+  background-color: #F5CB5C;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+body #comment_form input {
+  background-color: #242423;
+  color: white;
+  font-family: "Share Tech Mono", monospace, sans-serif;
+}
+body #comment_submit {
+  text-align: center;
+}
+body #comment_button {
+  color: #F5CB5C;
+  background-color: #333533;
+  font-family: "Share Tech Mono", monospace, sans-serif;
+  font-size: 15px;
+  padding: 3px;
+  border-radius: 5px;
+}
+body #comment_section {
+  color: #F5CB5C;
+  background-color: #333533;
+  font-family: "Share Tech Mono", monospace, sans-serif;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 20px;
+  width: 25vw;
+  text-align: left;
+}
+body #comment button {
+  color: #F5CB5C;
+  background-color: #333533;
+  border-radius: 5px;
+}
+body #edit_delete {
+  display: flex;
+}
+body #edit_delete button {
+  font-size: 13px;
+  padding: 5px;
+  margin: 3px;
 }
 
 /*# sourceMappingURL=main.css.map */
