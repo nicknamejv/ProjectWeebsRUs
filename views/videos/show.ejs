@@ -103,11 +103,20 @@
                     </small> 
                 </li>
             </ul>
+
             <a href="/comment/<%= allComment.id %>/edit">
                 <button>Edit</button>   
-            </a>    
+            </a>
+            
+            <div id="delete_button">
+                <form action="/comment/<%= allComment.id %>?_method=DELETE" method="POST">
+                    <button>Delete</button>
+                </form>
+            </div>
+            
         <% }) %>
     </section>
+    
     </div>
 </body>
 </html>
