@@ -15,30 +15,50 @@ router.get('/', (req, res) => {
 });
 
 // NOTE: SHOW Route
-router.get('/:id', (req, res, next) => {
-    Video.findById(req.params.id, (error, foundVideo) => {
-        if (error) {
-            console.log(error);
-            req.error = error;
-            return next();
+// router.get('/:id', (req, res, next) => {
+//     Video.findById(req.params.id, (error, foundVideo) => {
+//         if (error) {
+//             console.log(error);
+//             req.error = error;
+//             return next();
+//         };
+
+//         Comment.find({ video: req.params.id }).populate('video').exec((error, allComment) => {
+//             if (error) {
+//                 console.log(error);
+//                 req.error = error;
+//                 return next();
+//             };
+
+//             const context = {
+//                 video: foundVideo,
+//                 comments: allComment,
+//             };
+
+//             return res.render('videos/show', context);
+//         });
+//     });
+// });
+
+router.get('/:id', async (req, res, next) => {
+    try {
+        const foundVideo = await Video.findById(req.params.id);
+        const allComment = await Comment.find({ video: req.params.id }).populate('video');
+
+        const context = {
+            video: foundVideo,
+            comments: allComment,
         };
 
-        Comment.find({ video: req.params.id }).populate('video').exec((error, allComment) => {
-            if (error) {
-                console.log(error);
-                req.error = error;
-                return next();
-            };
-
-            const context = {
-                video: foundVideo,
-                comments: allComment,
-            };
-
-            return res.render('videos/show', context);
-        });
-    });
+        return res.render('videos/show', context);
+        
+    } catch (error) {
+        console.log (error);
+        req.error = error;
+        return next();
+    }
 });
+
 
 // NOTE: UPDATE Route
 router.put('/:id', (req, res, next) => {
