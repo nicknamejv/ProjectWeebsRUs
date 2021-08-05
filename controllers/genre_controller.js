@@ -1,4 +1,5 @@
 const express = require('express');
+const { video } = require('.');
 const router = express.Router();
 
 const { Video }  = require('../models');
@@ -18,7 +19,7 @@ router.get('/sliceoflife', async (req, res) => {
         console.log(error);
         req.error = error;
         return next();
-    }
+    };
 });
 
 // NOTE: INDEX Route - PSYCHOLOGICAL
@@ -36,7 +37,7 @@ router.get('/psychological', async (req, res) => {
         console.log(error);
         req.error = error;
         return next();
-    }
+    };
 });
 
 // NOTE: INDEX Route - SLICE OF LIFE
@@ -54,7 +55,7 @@ router.get('/journeytoanotherworld', async (req, res) => {
         console.log(error);
         req.error = error;
         return next();
-    }
+    };
 });
 
 module.exports = router;
