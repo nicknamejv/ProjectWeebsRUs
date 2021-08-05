@@ -297,5 +297,16 @@ body {
         margin-bottom: 30px;
         border-radius: 15px;
     }
+
+    #footer {
+        background: none;
+        color: $secondary-color;
+        font-family: "Share Tech Mono", monospace, sans-serif;
+        font-size: 20px;
+
+        #footer_img {
+            color: $secondary-color;
+        }
+    }
 }
 

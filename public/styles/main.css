@@ -244,5 +244,14 @@ body #error_img {
   margin-bottom: 30px;
   border-radius: 15px;
 }
+body #footer {
+  background: none;
+  color: #F5CB5C;
+  font-family: "Share Tech Mono", monospace, sans-serif;
+  font-size: 20px;
+}
+body #footer #footer_img {
+  color: #F5CB5C;
+}
 
 /*# sourceMappingURL=main.css.map */
