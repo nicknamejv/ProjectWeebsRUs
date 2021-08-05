@@ -19,6 +19,9 @@ body .title {
   color: #242423;
   font-family: "Share Tech Mono", monospace, sans-serif;
 }
+body #anime_content {
+  text-decoration: underline;
+}
 body #main_title {
   background-color: #F5CB5C;
   padding: 5px;

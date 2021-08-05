@@ -25,7 +25,12 @@ app.use('/comment', controllers.comment);
 
 app.use('/genre', controllers.genre);
 
-//NOTE: 404 Page
+// SECTION: Index Page
+app.get('/', (req, res) => {
+  res.redirect('/video');
+});
+
+// NOTE: 404 Page
 app.get("/*", (req, res) => {
     const context = {
       error: req.error,

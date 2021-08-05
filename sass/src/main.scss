@@ -27,6 +27,10 @@ body {
         color: $primary-color;
         font-family: "Share Tech Mono", monospace, sans-serif;
     }
+
+    #anime_content {
+        text-decoration: underline;
+    }
     
     #main_title {
         background-color: $secondary-color;
