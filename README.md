@@ -1,4 +1,4 @@
-![Image of Logo](https://github.com/nicknamejv/WeebsRUs/blob/dev/public/image/weebsruslogo.png)
+![Image of Logo](https://github.com/nicknamejv/WeebsRUs/blob/dev/public/image/logo.png)
 
 # Objective
 Our objective for this project is to create a full stack web application with the use of Express, Node.js, Mongoose, and MongoDB. With a partner we will reverse engineer a site of our choosing and pick our three key features to utilize within our own site. One of the main goals in this project is understand the user flow on the site we choose and create and implement our improvement. 
