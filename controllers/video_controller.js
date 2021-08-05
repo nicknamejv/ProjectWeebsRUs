@@ -33,7 +33,7 @@ router.get('/:id', async (req, res, next) => {
         };
 
         return res.render('videos/show', context);
-        
+    
     } catch (error) {
         console.log (error);
         req.error = error;
