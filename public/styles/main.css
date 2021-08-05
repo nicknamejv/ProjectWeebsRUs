@@ -126,7 +126,7 @@ body #recommend_button {
   padding: 5px;
   font-weight: bold;
   font-family: "Share Tech Mono", monospace, sans-serif;
-  font-size: 20px;
+  font-size: 25px;
 }
 body #recommendation_form {
   font-family: "Share Tech Mono", monospace, sans-serif;
@@ -140,7 +140,7 @@ body #submit_button {
   padding: 3px;
   font-weight: bold;
   font-family: "Share Tech Mono", monospace, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 5px;
 }
 body #comment_label {
