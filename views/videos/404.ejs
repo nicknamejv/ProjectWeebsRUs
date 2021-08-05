@@ -4,13 +4,10 @@
 <!-- Head Partial -->
 <%- include('../partials/head/_head', { page: '404 Page' }) %> 
 
-
-
 <body>
 
 <!-- Nav Partial -->
 <%- include('../partials/navbar/_navbar') %> 
-
 
 <div class="card" id="error_card">
   <p class="title" id="error_title">Baaakaaa 404 Page!</p>
@@ -21,7 +18,6 @@
       alt="not found"
     />
     <p class="title">Baaakaaa 404 Page!</p>
-    
     <% if (error) { %>
     <p><%= error.message %></p>
     <% } %>
@@ -29,4 +25,3 @@
     
 </body>
 </html>
-
