@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head Partial -->
+<%- include('../partials/head/_head', { page: '404 Page' }) %> 
+
+
+<body>
+
+<!-- Nav Partial -->
+<%- include('../partials/navbar/_navbar') %> 
+
+<div class="card">
+    <img
+      width="300px"
+      src="https://media1.tenor.com/images/e3c2efa5b6be969a1793c2afa4cc613a/tenor.gif?itemid=12719646"
+      alt="not found"
+    />
+    <p class="title">Baaakaaa 404 Page!</p>
+    <% if (error) { %>
+    <p><%= error.message %></p>
+    <% } %>
+  </div>
+    
+</body>
+</html>
