@@ -6,7 +6,9 @@
 }
 
 body {
-  background-color: #242423;
+  background-color: black;
+  background-image: url(/image/repeated-square-dark.png);
+  background-blend-mode: screen;
   min-height: 100vh;
 }
 body #web_logo {

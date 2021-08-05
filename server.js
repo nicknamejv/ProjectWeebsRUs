@@ -11,7 +11,6 @@ const controllers = require('./controllers');
 app.set('view engine', 'ejs');
 
 // NOTE: Middleware 
-
 app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: true }));

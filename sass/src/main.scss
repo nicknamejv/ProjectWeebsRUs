@@ -13,7 +13,9 @@
 // $fourth-color: #CFDBD5; // Timberwolf
 
 body {
-    background-color: $primary-color;
+    background-color: black;
+    background-image: url(/image/repeated-square-dark.png);
+    background-blend-mode: screen;
     min-height: 100vh;
 
     #web_logo {

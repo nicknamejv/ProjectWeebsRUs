@@ -32,35 +32,30 @@ router.get('/:id', async (req, res, next) => {
             comments: allComment,
         };
 
-        console.log(`${allComment} ========`);
-
         return res.render('videos/show', context);
         
     } catch (error) {
         console.log (error);
         req.error = error;
         return next();
-    }
+    };
 });
 
 
 // NOTE: UPDATE Route
-
-router.put('/:id', async(req, res, next) => {
+router.put('/:id', async (req, res, next) => {
     try {
         const updatedVideo = await Video.findByIdAndUpdate(req.params.id,
-            {
-                $set: req.body,
-            },
-            {
-                new: true,
-            });
+            { $set: req.body },
+            { new: true });
+
+            return res.redirect('/video');
 
     } catch (error) {
         console.log (error);
         req.error = error;
         return next();
-    }
+    };
 });
 
 module.exports = router;
