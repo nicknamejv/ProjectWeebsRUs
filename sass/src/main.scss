@@ -280,12 +280,18 @@ body {
         justify-content: center;
         align-items: center;
         height: 100vh;
+
+        #error_title {
+            background: $primary-color;
+            color: $secondary-color;
+            font-family: "Share Tech Mono", monospace, sans-serif;
+            border-radius: 5px;
+        }
     }
 
     #error_img {
         margin-bottom: 30px;
+        border-radius: 15px;
     }
-   
-
 }
 

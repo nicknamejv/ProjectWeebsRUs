@@ -231,8 +231,15 @@ body #error_card {
   align-items: center;
   height: 100vh;
 }
+body #error_card #error_title {
+  background: #242423;
+  color: #F5CB5C;
+  font-family: "Share Tech Mono", monospace, sans-serif;
+  border-radius: 5px;
+}
 body #error_img {
   margin-bottom: 30px;
+  border-radius: 15px;
 }
 
 /*# sourceMappingURL=main.css.map */
