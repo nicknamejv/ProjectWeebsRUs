@@ -25,6 +25,15 @@ app.use('/comment', controllers.comment);
 
 app.use('/genre', controllers.genre);
 
+//NOTE: 404 Page
+app.get("/*", (req, res) => {
+    const context = {
+      error: req.error,
+    };
+  
+    res.render("videos/404", context);
+  });
+
 app.listen(PORT, () => {
     console.log(`I live on port ${PORT}`);
 });
