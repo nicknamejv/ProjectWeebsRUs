@@ -272,5 +272,20 @@ body {
         }
     }
 
+    #error_card {
+        background-image:url(https://media.comicbook.com/2017/10/naruto-1040308-1280x0.png);
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #error_img {
+        margin-bottom: 30px;
+    }
+   
+
 }
 
