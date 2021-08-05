@@ -117,12 +117,12 @@
                         </ul>
 
                         <!-- COMMENT MODAL -->
-                        <div class="modal">
+                        <div class="modal" id="<%= allComment._id %>">
                             <div class="modal-background">
                                 <div id="comment_modal">
                                     <div class="modal-card">
                                         <header class="modal-card-head">
-                                            <div class="toggle-modal" id="delete_modal">
+                                            <div id="delete_modal">
                                                 <button class="delete" aria-label="close" ></button>
                                             </div>
                                         </header>
@@ -139,7 +139,7 @@
                                                 </div>
                                         
                                                 <div>
-                                                    <label for="comment_content">Content</label>
+                                                    <label for="comment_content">Content:</label>
                                                     <input 
                                                     type="text" 
                                                     name="content" 
@@ -165,7 +165,7 @@
                         </div>
                     
                     <div id="edit_delete">
-                        <button class="toggle-modal">Edit</button>
+                        <button class="toggle-modal" data-comment="<%= allComment._id %>">Edit</button>
 
                         <form action="/comment/<%= allComment.id %>?_method=DELETE" method="POST">
                             <button>Delete</button>
