@@ -27,5 +27,9 @@
 
     <script src="/scripts/bulma.js" defer></script>
 
-    <title>Weebs R Us</title>
+    <% if ( typeof page !== 'undefined' ) { %>
+        <title>Weebs R Us - <%= page %> </title>
+        <% } else { %>
+        <title>Weebs R Us</title>
+    <% } %>
 </head>
