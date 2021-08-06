@@ -2,31 +2,31 @@
 <html lang="en">
 
 <!-- Head Partial -->
-<%- include('../partials/head/_head', { page: '404 Page' }) %> 
+<%- include('../partials/head/_head', { page: '404 Page' }) %>
 
-<body>
+  <body>
 
-<!-- Nav Partial -->
-<%- include('../partials/navbar/_navbar') %> 
+    <!-- Nav Partial -->
+    <%- include('../partials/navbar/_navbar') %>
 
-<div class="card" id="error_card">
-  <div class="card">
-    <p class="title" id="error_title">
-      Baaakaaa 404 Page!
-    </p>
-  </div>
-  <figure class="image is-4by4">
-    <img
-      id="error_img"
-      width="300px"
-      src="https://media1.tenor.com/images/e3c2efa5b6be969a1793c2afa4cc613a/tenor.gif?itemid=12719646"
-      alt="not found"
-    />
-  </figure>
-    <% if (error) { %>
-    <p><%= error.message %></p>
-    <% } %>
-  </div>
-    
-</body>
+      <div class="card" id="error_card">
+        <div class="card">
+          <p class="title" id="error_title">
+            Baaakaaa 404 Page!
+          </p>
+        </div>
+        <figure class="image is-4by4">
+          <img id="error_img" width="300px"
+            src="https://media1.tenor.com/images/e3c2efa5b6be969a1793c2afa4cc613a/tenor.gif?itemid=12719646"
+            alt="not found" />
+        </figure>
+        <% if (error) { %>
+          <p>
+            <%= error.message %>
+          </p>
+          <% } %>
+      </div>
+
+  </body>
+
 </html>

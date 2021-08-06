@@ -1,117 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Head Partial -->
-    <%- include('../partials/head/_head', { page: 'Home' })%> 
+<!-- Head Partial -->
+<%- include('../partials/head/_head', { page: 'Home' })%>
 
-<body>
+    <body>
         <!-- Nav Partial -->
-    <%- include('../partials/navbar/_navbar') %> 
-    <section class="hero is-small" id="main_title">
-        <h1 class="title is-1" id="weeb_title">
-            Weebs R Us
-        </h1>
-    </section>
+        <%- include('../partials/navbar/_navbar') %>
+            <section class="hero is-small" id="main_title">
+                <h1 class="title is-1" id="weeb_title">
+                    Weebs R Us
+                </h1>
+            </section>
 
-    <br>
+            <br>
 
-    <h1 class="title has-text-centered" id="index_title">Popular Anime</h1>
-    <main class="container is-max-widescreen">
-        <div id="popular_video">
-                <section id="video">
-                    <div class="columns">
-                        <% videos.forEach(allVideo => { %>
-                            <ul class="video_list">
-                                <div class="column is-full">
-                                    <div class="card" id="index_card">
-                                        <div class="card-image">
-                                            <figure class="image is-4by4">
-                                                <a href="/video/<%= allVideo.id %>">
-                                                    <img 
-                                                    src="<%= allVideo.videoImage %>"
-                                                    alt="video image"
-                                                    />
-                                                </a>
-                                            </figure>
-                                        </div>
-                                        <div class="card-content">
-                                            <li>
-                                                <b id="anime_content">Title:</b>
-                                                <%= allVideo.title %>
-                                            </li>
-                                            <li>
-                                            <li>
-                                                <b id="anime_content">Description:</b> <%= allVideo.description %>
-                                            </li>
-                                            <li>
-                                                <b id="anime_content">Genre:</b> <%= allVideo.genre %>
-                                            </li>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ul> 
-                        <% }); %>
-                    </div>
-                </section>
-        </div>
-
-        <br>
-
-        <h1 class="title has-text-centered" id="index_title">User Recommended Anime</h1>
-        <div id="recommended_video">
-                <section id="video">
-                    <div class="columns">
-                        <% videos.forEach(allVideo => { %>
-                            <% if (allVideo.isRecommended === true) { %>
-                                <ul class="recommended_list">
+            <h1 class="title has-text-centered" id="index_title">Popular Anime</h1>
+            <main class="container is-max-widescreen">
+                <div id="popular_video">
+                    <section id="video">
+                        <div class="columns">
+                            <% videos.forEach(allVideo=> { %>
+                                <ul class="video_list">
                                     <div class="column is-full">
                                         <div class="card" id="index_card">
                                             <div class="card-image">
                                                 <figure class="image is-4by4">
                                                     <a href="/video/<%= allVideo.id %>">
-                                                        <img 
-                                                        src="<%= allVideo.videoImage %>"
-                                                        alt="video image"
-                                                        />
+                                                        <img src="<%= allVideo.videoImage %>" alt="video image" />
                                                     </a>
                                                 </figure>
-                                                <div class="card-content">
-                                                    <li>
-                                                        <b id="anime_content">Title:</b>
-                                                        <%= allVideo.title %>
-                                                    </li>
-                                                        <b id="anime_content">Description:</b> <%= allVideo.description %>
-                                                    </li>
-                                                    <li>
-                                                        <b id="anime_content">Genre:</b> <%= allVideo.genre %>
-                                                    </li>
-                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <li>
+                                                    <b id="anime_content">Title:</b>
+                                                    <%= allVideo.title %>
+                                                </li>
+                                                <li>
+                                                <li>
+                                                    <b id="anime_content">Description:</b>
+                                                    <%= allVideo.description %>
+                                                </li>
+                                                <li>
+                                                    <b id="anime_content">Genre:</b>
+                                                    <%= allVideo.genre %>
+                                                </li>
                                             </div>
                                         </div>
                                     </div>
                                 </ul>
-                            <% } %>
-                        <% }); %>
+                                <% }); %>
+                        </div>
+                    </section>
+                </div>
+
+                <br>
+
+                <h1 class="title has-text-centered" id="index_title">User Recommended Anime</h1>
+                <div id="recommended_video">
+                    <section id="video">
+                        <div class="columns">
+                            <% videos.forEach(allVideo=> { %>
+                                <% if (allVideo.isRecommended===true) { %>
+                                    <ul class="recommended_list">
+                                        <div class="column is-full">
+                                            <div class="card" id="index_card">
+                                                <div class="card-image">
+                                                    <figure class="image is-4by4">
+                                                        <a href="/video/<%= allVideo.id %>">
+                                                            <img src="<%= allVideo.videoImage %>" alt="video image" />
+                                                        </a>
+                                                    </figure>
+                                                    <div class="card-content">
+                                                        <li>
+                                                            <b id="anime_content">Title:</b>
+                                                            <%= allVideo.title %>
+                                                        </li>
+                                                        <b id="anime_content">Description:</b>
+                                                        <%= allVideo.description %>
+                                                            </li>
+                                                            <li>
+                                                                <b id="anime_content">Genre:</b>
+                                                                <%= allVideo.genre %>
+                                                            </li>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                    <% } %>
+                                        <% }); %>
+                        </div>
+                    </section>
+                </div>
+
+                <br>
+
+                <footer class="card" id="footer">
+                    <div class="content has-text-centered">
+                        <p>
+                            <strong id="footer">Weebs R Us</strong> by Jon Ver Cabral
+                            <a href="https://github.com/nicknamejv">
+                                <i class="fab fa-github-square" id="footer_img"></i>
+                            </a> || Tevenn Lewis
+                            <a href="https://github.com/TevennLewis"><i class="fab fa-github-square"
+                                    id="footer_img"></i>
+                            </a>
+                        </p>
                     </div>
-                </section>
-        </div>
-
-        <br>
-
-        <footer class="card" id="footer">
-            <div class="content has-text-centered">
-                <p>
-                <strong id="footer" >Weebs R Us</strong> by Jon Ver Cabral 
-                <a href="https://github.com/nicknamejv">
-                    <i class="fab fa-github-square" id="footer_img"></i>
-                </a> || Tevenn Lewis
-                <a href="https://github.com/TevennLewis"><i class="fab fa-github-square" id="footer_img"></i>
-                </a>
-                </p>
-            </div>
-        </footer>
-    </main>
+                </footer>
+            </main>
 
 
-</body>
+    </body>
+
 </html>

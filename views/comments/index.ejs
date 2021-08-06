@@ -1,47 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Head Partial -->
-    <%- include('../partials/head/_head') %> 
+<!-- Head Partial -->
+<%- include('../partials/head/_head') %>
 
-<body>
-    
-    <h1 class='title'>
-        Weebs R Us - Comment Index Page
-    </h1>
+    <body>
 
-    <a href="/video"><button>Video Index</button></a>
+        <h1 class='title'>
+            Weebs R Us - Comment Index Page
+        </h1>
 
-    <section id="comment">
-        <% comments.forEach(allComment => { %>
-            <ul class="comment_list">
-                <li>
-                    Username: <%= allComment.username %> 
-                </li>
-                <li>
-                    Content: <%= allComment.content %>
-                    <small>
-                    <%= new Date(allComment.createdAt).toLocaleString() %>
-                    </small> 
-                </li>
-                <li>
-                    <a href="/video/<%= allComment.video._id %> ">
-                        <%= allComment.video.Title %>
-                    </a>
-                </li>
-                <li>
-                    <a href="/video/<%= allComment.video._id %>  ">
-                        <img 
-                        src="<%= allComment.video.videoImage %>" alt="video_image"
-                        width="200"
-                        height="100"
-                        >
-                    </a>
-                </li>
-            </ul>
-        <% }) %>
-    </section>
-    
-</body>
+        <a href="/video"><button>Video Index</button></a>
+
+        <section id="comment">
+            <% comments.forEach(allComment=> { %>
+                <ul class="comment_list">
+                    <li>
+                        Username: <%= allComment.username %>
+                    </li>
+                    <li>
+                        Content: <%= allComment.content %>
+                            <small>
+                                <%= new Date(allComment.createdAt).toLocaleString() %>
+                            </small>
+                    </li>
+                    <li>
+                        <a href="/video/<%= allComment.video._id %> ">
+                            <%= allComment.video.Title %>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/video/<%= allComment.video._id %>  ">
+                            <img src="<%= allComment.video.videoImage %>" alt="video_image" width="200" height="100">
+                        </a>
+                    </li>
+                </ul>
+                <% }) %>
+        </section>
+
+    </body>
+
 </html>
