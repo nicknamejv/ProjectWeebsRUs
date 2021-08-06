@@ -14,8 +14,8 @@ router.get('/', async (req, res) => {
 
         return res.render('videos/index', context);
 
-    } catch(error) {
-        console.log (error);
+    } catch (error) {
+        console.log(error);
         req.error = error;
         return next();
     };
@@ -33,9 +33,9 @@ router.get('/:id', async (req, res, next) => {
         };
 
         return res.render('videos/show', context);
-    
+
     } catch (error) {
-        console.log (error);
+        console.log(error);
         req.error = error;
         return next();
     };
@@ -49,10 +49,10 @@ router.put('/:id', async (req, res, next) => {
             { $set: req.body },
             { new: true });
 
-            return res.redirect('/video');
+        return res.redirect('/video');
 
     } catch (error) {
-        console.log (error);
+        console.log(error);
         req.error = error;
         return next();
     };

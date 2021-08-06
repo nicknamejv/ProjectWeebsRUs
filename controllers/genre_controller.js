@@ -2,13 +2,13 @@ const express = require('express');
 const { video } = require('.');
 const router = express.Router();
 
-const { Video }  = require('../models');
+const { Video } = require('../models');
 
 // NOTE: INDEX Route - SLICE OF LIFE
 router.get('/sliceoflife', async (req, res) => {
     try {
         const allVideo = await Video.find({ genre: 'Slice of Life' });
-        
+
         const context = {
             videos: allVideo,
         };
@@ -26,11 +26,11 @@ router.get('/sliceoflife', async (req, res) => {
 router.get('/psychological', async (req, res) => {
     try {
         const allVideo = await Video.find({ genre: 'Psychological' });
-        
+
         const context = {
             videos: allVideo,
         };
-        
+
         return res.render('genres/index', context);
 
     } catch (error) {

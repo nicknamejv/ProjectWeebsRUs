@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const { Comment, Video }  = require('../models');
+const { Comment, Video } = require('../models');
 
 // NOTE: INDEX Route
 router.get('/', async (req, res, next) => {
     try {
         const allComment = await Comment.find({}).populate('video');
-        
+
         const context = {
             comments: allComment,
         };
-        
+
         return res.render('comments/index', context);
 
     } catch (error) {
@@ -27,13 +27,13 @@ router.post('/', async (req, res, next) => {
         const comment = {
             ...req.body,
         };
-        
+
         const createdComment = await Comment.create(comment);
 
         return res.redirect(`/${req.query.redirect}`);
 
     } catch (error) {
-        console.log (error);
+        console.log(error);
         req.error = error;
         return next();
     };
@@ -52,30 +52,30 @@ router.get('/:id/edit', async (req, res, next) => {
         return res.render('comments/edit', context);
 
     } catch (error) {
-        console.log (error);
+        console.log(error);
         req.error = error;
         return next();
     };
 });
 
 // NOTE: Update Route (functional)
-router.put('/:id', async (req, res, next ) => {
+router.put('/:id', async (req, res, next) => {
     try {
-        const updatedComment = await Comment.findByIdAndUpdate(req.params.id, 
-            { $set: req.body }, 
+        const updatedComment = await Comment.findByIdAndUpdate(req.params.id,
+            { $set: req.body },
             { new: true });
 
-            const allVideo = await Video.find({ video: updatedComment.video }).populate('video');
+        const allVideo = await Video.find({ video: updatedComment.video }).populate('video');
 
-            const context = {
-                comment: updatedComment,
-                video: allVideo,
-            };
+        const context = {
+            comment: updatedComment,
+            video: allVideo,
+        };
 
-            return res.redirect(`/video/${updatedComment.video}`);
+        return res.redirect(`/video/${updatedComment.video}`);
 
     } catch (error) {
-        console.log (error);
+        console.log(error);
         req.error = error;
         return next();
     };
@@ -89,7 +89,7 @@ router.delete('/:id', async (req, res, next) => {
         return res.redirect(`/video/${deletedComment.video}`);
 
     } catch (error) {
-        console.log (error);
+        console.log(error);
         req.error = error;
         return next();
     };

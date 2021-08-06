@@ -1,43 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form action="/comment/<%= comment.id %>?_method=PUT" method="POST">
         <div>
             <label for="username_comment">Username:</label>
-            <input 
-            type="text" 
-            name="username" 
-            placeholder="Username"
-            value="<%= comment.username %>"
-            >
+            <input type="text" name="username" placeholder="Username" value="<%= comment.username %>">
         </div>
 
         <div>
             <label for="comment_content">Content</label>
-            <input 
-            type="text" 
-            name="content" 
-            placeholder="Have a comment?"
-            value="<%= comment.content %>"
-            >
+            <input type="text" name="content" placeholder="Have a comment?" value="<%= comment.content %>">
         </div>
 
         <!-- Here is our hidden input to provide the video id -->
-        <input 
-        type="hidden"
-        name="comment"
-        value="<%= comment._id %>"/>
+        <input type="hidden" name="comment" value="<%= comment._id %>" />
 
         <div>
             <button>Submit</button>
         </div>
     </form>
-    
+
 </body>
+
 </html>
